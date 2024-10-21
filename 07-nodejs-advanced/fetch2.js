@@ -6,7 +6,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
         return response.json();
     })
     .then(data => {
-        console.log('Publicación:', data);
+        console.log('Título:', data.title);
     })
     .catch(error => {
         console.error('Error al realizar la solicitud:', error);

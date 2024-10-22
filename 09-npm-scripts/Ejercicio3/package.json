@@ -1,0 +1,14 @@
+{
+    "name": "09-npm-scripts",
+  "version": "1.0.0",
+    "scripts": {
+      "crear": "mkdir -p files",
+      "crear:js": "node scripts/crearJs.js",
+      "crear:carpeta": "node scripts/crearCarpeta.js",
+      "borrar": "rimraf files",
+      "borrar:js": "rimraf files/*.js"
+    },
+    "devDependencies": {
+      "rimraf": "^3.0.0"
+    }
+  }

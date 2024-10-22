@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "create": "node index.js 1",
+    "edit": "node index.js 2",
+    "delete": "node index.js 3",
+    "exit": "node index.js 4",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

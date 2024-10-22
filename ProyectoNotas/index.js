@@ -13,6 +13,11 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+// Obtener argumentos de la línea de comandos
+const args = process.argv.slice(2);
+const selectedOption = args[0] || null;
+const noteName = args[1] || null; // Para el nombre de la nota
+
 function showMenu() {
     console.log('\n--- Editor de Notas ---');
     console.log('1. Crear nueva nota');
@@ -25,7 +30,11 @@ function showMenu() {
 function handleMenuSelection(option) {
     switch (option) {
         case '1':
-            createNote();
+            if (noteName) {
+                createNoteWithName(noteName);
+            } else {
+                createNote();
+            }
             break;
         case '2':
             editNote();
@@ -61,6 +70,25 @@ function createNote() {
                 content.push(input);
             }
         });
+    });
+}
+
+function createNoteWithName(name) {
+    const filePath = path.join(notesDir, `${name}.note`);
+    let content = [];
+    console.log('Escribe tu nota (deja una línea en blanco para terminar):');
+
+    rl.on('line', (input) => {
+        if (input.trim() === '') {
+            if (content.length > 0 && content[content.length - 1].trim() === '') {
+                rl.removeAllListeners('line');
+                saveNote(filePath, content);
+            } else {
+                content.push(input);
+            }
+        } else {
+            content.push(input);
+        }
     });
 }
 
@@ -170,4 +198,8 @@ function deleteNote() {
 }
 
 // Iniciar el editor
-showMenu();
+if (selectedOption) {
+    handleMenuSelection(selectedOption);
+} else {
+    showMenu();
+}

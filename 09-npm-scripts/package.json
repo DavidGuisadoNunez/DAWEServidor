@@ -1,0 +1,20 @@
+{
+  "name": "09-npm-scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "clear:modules": "rimraf **/node_modules",
+    "clear:locks": "rimraf **/package-lock.json",
+    "clear:test": "echo 'Ejecutando limpieza de pruebas'",
+    "clear": "npm run clear:test && npm run clear:locks && npm run clear:modules",
+    "clear:env": "rimraf **/.env",
+    "copy:env": "for d in workspaces/*; do cp ${d}/.env.template ${d}/.env; done",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

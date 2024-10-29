@@ -1,10 +1,10 @@
 {
   "name": "11-unit-test",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "fizzbuzz_custom.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,8 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "nyc": "^17.1.0"
+  },
+  "dependencies": {
+    "ava": "^6.2.0"
   }
 }

@@ -23,7 +23,7 @@ app.get('/users/:id', (req, res) => {
 });
 
 // Create a new user
-app.post('/users', (req, res) => {
+app.post('/users' , (req, res) => {
     const newUser = {
         id: users.length + 1,
         name: req.body.name,

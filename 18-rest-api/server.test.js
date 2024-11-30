@@ -12,7 +12,7 @@ let users = [
 
 // ...existing code for routes...
 
-describe('Users API', () => {
+describe('Users API', ()  => {
     it('should list all users', async () => {
         const res = await request(app).get('/users');
         expect(res.statusCode).toEqual(200);

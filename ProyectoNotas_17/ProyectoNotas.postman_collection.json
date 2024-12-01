@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "c74f2d66-cfb9-4abc-b6fc-21de058cdce6",
+		"name": "ProyectoNotas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39317056"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3100/api/notes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"David9\",\r\n    \"content\": \"Soy David Guisado6.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					]
+				},
+				"description": "Crear notas inclutyendo name y content en el body"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					]
+				},
+				"description": "Listar el nombre de todas las notas existentes"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes/David",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Soy David Guisado5 pero actualizado otra vez.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/notes/David9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes",
+						"David9"
+					]
+				},
+				"description": "Actualizar el contenido de una nota a partir de su nombre"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes/David3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes/David9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes",
+						"David9"
+					]
+				},
+				"description": "Eliminar una nota a partir de su nombre"
+			},
+			"response": []
+		}
+	]
+}

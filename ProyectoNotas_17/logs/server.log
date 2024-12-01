@@ -1,0 +1,21 @@
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:43:26.251Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:44:09.582Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:44:16.932Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:44:21.672Z"}
+[32minfo[39m: Request: GET /api/notes/David {"timestamp":"2024-12-01T22:44:35.265Z"}
+[32minfo[39m: Request: GET /api/notes/David1 {"timestamp":"2024-12-01T22:44:41.684Z"}
+[32minfo[39m: Request: GET /api/notes/David3 {"timestamp":"2024-12-01T22:45:06.810Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:48:55.396Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:49:07.773Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:49:12.836Z"}
+[32minfo[39m: Request: PUT /api/notes/David5 {"timestamp":"2024-12-01T22:49:28.486Z"}
+[32minfo[39m: Request: DELETE /api/notes/David5 {"timestamp":"2024-12-01T22:49:54.216Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:50:05.085Z"}
+[32minfo[39m: Request: PUT /api/notes/David7 {"timestamp":"2024-12-01T22:52:42.815Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:53:02.374Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:53:21.246Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:53:46.650Z"}
+[32minfo[39m: Request: DELETE /api/notes/David9 {"timestamp":"2024-12-01T22:53:59.254Z"}
+[31merror[39m: ENOENT: no such file or directory, unlink 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\src\notes\David9.note' {"timestamp":"2024-12-01T22:53:59.259Z"}
+[32minfo[39m: Request: PUT /api/notes/David9 {"timestamp":"2024-12-01T22:54:12.067Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:54:17.620Z"}

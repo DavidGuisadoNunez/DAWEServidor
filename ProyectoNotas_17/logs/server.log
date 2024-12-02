@@ -19,3 +19,73 @@
 [31merror[39m: ENOENT: no such file or directory, unlink 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\src\notes\David9.note' {"timestamp":"2024-12-01T22:53:59.259Z"}
 [32minfo[39m: Request: PUT /api/notes/David9 {"timestamp":"2024-12-01T22:54:12.067Z"}
 [32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:54:17.620Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T23:22:48.108Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt:desc&filter={%22title%22:%22nota%22,%22dateRange%22:{%22startDate%22:%222023-01-01%22,%22endDate%22:%222024-01-01%22}}&page=1&limit=5 {"timestamp":"2024-12-01T23:23:38.637Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt:desc&filter={%22title%22:%22nota%22,%22dateRange%22:{%22startDate%22:%222024-01-01%22,%22endDate%22:%222024-12-01%22}}&page=1&limit=5 {"timestamp":"2024-12-01T23:24:02.066Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt:desc&filter={%22title%22:%22David4%22}}&page=1&limit=5 {"timestamp":"2024-12-01T23:25:32.913Z"}
+[31merror[39m: Unexpected non-whitespace character after JSON at position 18 {"timestamp":"2024-12-01T23:25:32.917Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt:desc&filter={%22title%22:%22David4.note%22}}&page=1&limit=5 {"timestamp":"2024-12-01T23:25:52.631Z"}
+[31merror[39m: Unexpected non-whitespace character after JSON at position 23 {"timestamp":"2024-12-01T23:25:52.636Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T23:26:07.682Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22important%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:27:56.905Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:28:05.555Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22title%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:17.620Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22contentt%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:28.591Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:35.837Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22hiii%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:41.006Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:49.226Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:32:04.226Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:32:30.290Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=2&limit=5 {"timestamp":"2024-12-01T23:33:15.093Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=2&limit=5 {"timestamp":"2024-12-01T23:33:23.279Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=2&limit=5 {"timestamp":"2024-12-01T23:33:29.524Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=5&sort=createdAt&order=desc {"timestamp":"2024-12-01T23:37:10.948Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=5&sort=createdAt&order=desc {"timestamp":"2024-12-01T23:37:31.802Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=5&sort=createdAt&order=desc {"timestamp":"2024-12-01T23:38:33.535Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=9&sort=createdAt&order=desc {"timestamp":"2024-12-01T23:38:40.515Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt&order=asc {"timestamp":"2024-12-01T23:45:47.850Z"}
+[32minfo[39m: Request: GET /api/notes?sort=updatedAt&order=desc {"timestamp":"2024-12-01T23:46:43.798Z"}
+[32minfo[39m: Request: GET /api/notes?sort=updatedAt&order=desc {"timestamp":"2024-12-01T23:47:28.756Z"}
+[32minfo[39m: Request: GET /api/notes?sort=title&order=asc {"timestamp":"2024-12-01T23:47:59.822Z"}
+[32minfo[39m: Request: GET /api/notes?sort=title&order=desc {"timestamp":"2024-12-01T23:48:13.311Z"}
+[32minfo[39m: Request: GET /api/notes?sort=size&order=desc {"timestamp":"2024-12-01T23:48:51.453Z"}
+[32minfo[39m: Request: GET /api/notes?filter[title]=David {"timestamp":"2024-12-01T23:49:51.985Z"}
+[32minfo[39m: Request: GET /api/notes?filter[title]=David4 {"timestamp":"2024-12-01T23:50:04.235Z"}
+[32minfo[39m: Request: GET /api/notes?filter[content]=importante {"timestamp":"2024-12-01T23:50:39.455Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T23:50:50.548Z"}
+[32minfo[39m: Request: GET /api/notes?filter[content]=actualizado {"timestamp":"2024-12-01T23:51:03.552Z"}
+[32minfo[39m: Request: GET /api/notes?filter[title]=David4 {"timestamp":"2024-12-01T23:52:47.494Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T23:52:58.222Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-01&filter[dateRange][endDate]=2024-12-01 {"timestamp":"2024-12-01T23:53:36.384Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-02&filter[dateRange][endDate]=2024-12-01 {"timestamp":"2024-12-01T23:53:47.256Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-02&filter[dateRange][endDate]=2024-12-02 {"timestamp":"2024-12-01T23:53:53.276Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=2 {"timestamp":"2024-12-01T23:54:54.154Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-01T22:00:00Z&filter[dateRange][endDate]=2024-12-01T23:59:59Z {"timestamp":"2024-12-01T23:57:58.879Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-01T22:15:00Z&filter[dateRange][endDate]=2024-12-01T22:20:59Z {"timestamp":"2024-12-01T23:58:20.649Z"}
+[32minfo[39m: Request: GET /api/note {"timestamp":"2024-12-02T00:00:56.153Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-02T00:01:08.430Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt&order=asc {"timestamp":"2024-12-02T00:01:33.469Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt&order=asc {"timestamp":"2024-12-02T00:01:33.985Z"}
+[32minfo[39m: Request: GET /favicon.ico {"timestamp":"2024-12-02T00:01:34.985Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt&order=asc {"timestamp":"2024-12-02T00:01:36.246Z"}
+[32minfo[39m: Request: GET /api/notes?sort=updatedAt&order=desc {"timestamp":"2024-12-02T00:01:47.592Z"}
+[32minfo[39m: Request: GET /api/notes/upload {"timestamp":"2024-12-02T00:10:35.912Z"}
+[32minfo[39m: Request: GET /api/notes/uploadNotes {"timestamp":"2024-12-02T00:10:43.174Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:13:53.473Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:14:05.981Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:19:43.712Z"}
+[31merror[39m: ENOENT: no such file or directory, open 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\uploads\a488f4c32c5ffa973e49e8163a11d39d' {"timestamp":"2024-12-02T00:19:43.759Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:22:50.125Z"}
+[31merror[39m: ENOENT: no such file or directory, open 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\uploads\5068ac47177a1eb002217efa61872495' {"timestamp":"2024-12-02T00:22:50.133Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:33:33.234Z"}
+[31merror[39m: ENOENT: no such file or directory, open 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\uploads\a90423414463e254a1621133da4fecfd' {"timestamp":"2024-12-02T00:33:33.237Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:34:30.363Z"}
+[31merror[39m: ENOENT: no such file or directory, open 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\uploads\2bccad48e95dbdda1f58ce123d8f7e42' {"timestamp":"2024-12-02T00:34:30.370Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:43:40.508Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:43:57.114Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T00:43:57.123Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:44:09.247Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T00:44:09.258Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:44:28.000Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T00:44:28.011Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:45:29.298Z"}

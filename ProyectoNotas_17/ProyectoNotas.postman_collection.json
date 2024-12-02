@@ -109,6 +109,246 @@
 				"description": "Eliminar una nota a partir de su nombre"
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?sort=createdAt&order=asc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?sort=createdAt&order=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "createdAt"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				},
+				"description": "Listar las notas por fecha de creación ascendente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?sort=updatedAt&order=desc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?sort=updatedAt&order=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "updatedAt"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				},
+				"description": "Listar las notas por fecha de edición descendente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?sort=title&order=desc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?sort=title&order=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "title"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				},
+				"description": "Listar las notas por título descendente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?sort=size&order=desc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?sort=size&order=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "size"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				},
+				"description": "Lista las notas por tamaño descendente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?filter[title]=David4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?filter[title]=David4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter[title]",
+							"value": "David4"
+						}
+					]
+				},
+				"description": "Listar las notas que contienen un texto específico en el título"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?filter[content]=actualizado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?filter[content]=actualizado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter[content]",
+							"value": "actualizado"
+						}
+					]
+				},
+				"description": "Listar las notas que tienen un texto específico en el contenido"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?page=1&limit=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?page=1&limit=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				},
+				"description": "Listar las notas con ciertos elementos por página"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?filter[dateRange][startDate]=2024-12-01T22:15:00Z&filter[dateRange][endDate]=2024-12-01T22:20:59Z",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?filter[dateRange][startDate]=2024-12-01T22:15:00Z&filter[dateRange][endDate]=2024-12-01T22:20:59Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter[dateRange][startDate]",
+							"value": "2024-12-01T22:15:00Z"
+						},
+						{
+							"key": "filter[dateRange][endDate]",
+							"value": "2024-12-01T22:20:59Z"
+						}
+					]
+				},
+				"description": "Listar notas con rango de fechas en la creación"
+			},
+			"response": []
 		}
 	]
 }

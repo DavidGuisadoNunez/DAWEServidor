@@ -349,6 +349,38 @@
 				"description": "Listar notas con rango de fechas en la creación"
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes/upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/User/Desktop/2_DAW/DAWEServidor/ProyectoNotas/notes/Holaaaaaa.note"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/notes/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes",
+						"upload"
+					]
+				},
+				"description": "Subida de ficheros .note a la carpeta /notes"
+			},
+			"response": []
 		}
 	]
 }

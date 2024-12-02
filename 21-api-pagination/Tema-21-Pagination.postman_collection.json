@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "46be27db-c48a-4d6f-a24e-b8e0f7c66166",
+		"name": "Tema-21-Pagination",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39317056"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/notes?filter=David&sort=asc&page=1&limit=3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notes?filter=David&sort=asc&page=1&limit=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "David"
+						},
+						{
+							"key": "sort",
+							"value": "asc"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				},
+				"description": "Filtrar notas que contengan \"David\", Ordenar ascendentemente y Paginación"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/notes?filter=David&sort=desc&page=2&limit=3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notes?filter=David&sort=desc&page=2&limit=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "David"
+						},
+						{
+							"key": "sort",
+							"value": "desc"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				},
+				"description": "Filtrar notas que contengan \"David\", Ordenar descendente y Paginación"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/notes?filter=David&page=1&limit=5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notes?filter=David&page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "David"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				},
+				"description": "Filtrar notas que contengan \"David\", Sin ordenación y Paginación"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/notes?filter=Davilito&sort=asc&page=1&limit=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notes?filter=Davilito&sort=asc&page=1&limit=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "Davilito"
+						},
+						{
+							"key": "sort",
+							"value": "asc"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Filtrar por nombre \"Davilito\", Ordenar ascendente y Paginación"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/notes?filter=Atajito&sort=desc&page=1&limit=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notes?filter=Atajito&sort=desc&page=1&limit=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "Atajito"
+						},
+						{
+							"key": "sort",
+							"value": "desc"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Filtrar por nombre \"Atajito\", Ordenar descendente y Paginación"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/notes?filter=444&page=1&limit=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notes?filter=444&page=1&limit=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "444"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Filtrar por nombre \"444\", Sin ordenación y Paginación"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/notes?sort=asc&page=1&limit=5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notes?sort=asc&page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "asc"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				},
+				"description": "Sin Filtro, Ordenación ascendente y Paginación"
+			},
+			"response": []
+		}
+	]
+}

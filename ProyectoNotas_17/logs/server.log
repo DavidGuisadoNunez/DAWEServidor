@@ -89,3 +89,7 @@
 [32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:44:28.000Z"}
 [31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T00:44:28.011Z"}
 [32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:45:29.298Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T15:44:19.527Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T15:44:19.740Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T15:44:45.024Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T15:44:45.154Z"}

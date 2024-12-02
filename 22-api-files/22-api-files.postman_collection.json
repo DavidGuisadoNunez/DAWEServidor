@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "feb134d1-c874-4406-945a-280da644e35b",
+		"name": "22-api-files",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39317056"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/User/Desktop/2_DAW/DAWEServidor/ProyectoNotas_17/src/notes/David4.note"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload"
+					]
+				},
+				"description": "Ruta para incluir archivos a la carpeta files"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/download/David4.note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/download/David4.note",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"download",
+						"David4.note"
+					]
+				},
+				"description": "Ruta para descargar cualquier archivo"
+			},
+			"response": []
+		}
+	]
+}

@@ -93,3 +93,18 @@
 [31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T15:44:19.740Z"}
 [32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T15:44:45.024Z"}
 [31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T15:44:45.154Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-13T23:16:06.300Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-13T23:19:34.860Z"}
+[32minfo[39m: Request: DELETE /api/notes/David9 {"timestamp":"2024-12-13T23:19:49.193Z"}
+[32minfo[39m: Request: DELETE /api/notes/David9 {"timestamp":"2024-12-13T23:20:09.964Z"}
+[31merror[39m: ENOENT: no such file or directory, unlink 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\src\notes\David9.note' {"timestamp":"2024-12-13T23:20:09.977Z"}
+[32minfo[39m: Request: DELETE /api/notes/David9 {"timestamp":"2024-12-13T23:20:29.882Z"}
+[32minfo[39m: Request: GET /api/notes/David99 {"timestamp":"2024-12-13T23:21:27.885Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-13T23:23:53.215Z"}
+[32minfo[39m: Request: DELETE /api/notes/Hola {"timestamp":"2024-12-13T23:24:15.066Z"}
+[32minfo[39m: Request: DELETE /api/notes/Hola {"timestamp":"2024-12-13T23:24:35.022Z"}
+[31merror[39m: ENOENT: no such file or directory, unlink 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\src\notes\Hola.note' {"timestamp":"2024-12-13T23:24:35.032Z"}
+[32minfo[39m: Request: DELETE /api/notes/Holaa {"timestamp":"2024-12-13T23:24:52.054Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-13T23:26:50.078Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-13T23:27:32.202Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-13T23:28:26.451Z"}

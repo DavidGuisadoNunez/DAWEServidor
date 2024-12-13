@@ -1,6 +1,14 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const config = {
-  port: process.env.PORT,
-  level: process.env.NODE_ENV === 'production' ? 'error' : 'info'
-}
+  app: {
+      PORT: process.env.PORT || 3000,
+  },
+  security: {
+      JWT_SECRET: process.env.JWT_SECRET, 
+  }
+};
 
 export default config;

@@ -14,5 +14,3 @@ export default [
   }),
   { rules }
 ];
-
-/** PARA CAMBIAR LA CONFIGURACIÓN DE VSCODE: C:\Users\User\AppData\Roaming\Code\User\settings.json EN EL CMD */

@@ -1,0 +1,19 @@
+// {
+//     "extends": "airbnb-base",
+//     "rules": {
+//       "no-var": "error",
+//       "max-len": ["error", { "code": 80 }],
+//       "no-console": "warn"
+//     }
+//   }
+
+{
+    "extends": "airbnb-base",
+    "rules": {
+      "no-var": "error", // Prohibir el uso de var
+      "max-len": ["error", { "code": 80 }], // Longitud máxima de línea
+      "no-console": "warn", // Advertir sobre el uso de console
+      "quotes": ["error", "single"], // Uso de comillas simples
+      "semi": ["error", "always"] // Requerir punto y coma
+    }
+  }

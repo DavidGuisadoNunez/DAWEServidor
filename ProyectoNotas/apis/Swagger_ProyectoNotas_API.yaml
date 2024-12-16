@@ -1,0 +1,130 @@
+openapi: 3.0.0
+info:
+  title: Proyecto Notas
+  description: API para crear, listar, actualizar, eliminar y subir notas.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3100
+    description: Servidor local
+
+components:
+  securitySchemes:
+    bearerAuth: # Define el esquema de seguridad
+      type: http
+      scheme: bearer
+      bearerFormat: JWT # Opcional, describe el formato del token
+
+paths:
+  /api/notes:
+    post:
+      summary: Crear una nota
+      description: Crear notas incluyendo `name` y `content` en el body.
+      security:
+        - bearerAuth: [] # Aplica la seguridad a esta operación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: David9
+                content:
+                  type: string
+                  example: Soy David Guisado6.
+      responses:
+        '200':
+          description: Nota creada exitosamente.
+        '401':
+          description: No autorizado, token inválido o ausente.
+    get:
+      summary: Listar todas las notas
+      description: Obtener el nombre de todas las notas existentes o aplicando filtros.
+      security:
+        - bearerAuth: [] # Aplica la seguridad a esta operación
+      parameters:
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Parámetro de ordenamiento (`createdAt`, `updatedAt`, `title`, `size`).
+        - name: order
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [asc, desc]
+          description: Orden ascendente o descendente.
+        - name: filter[title]
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filtrar notas por título.
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Número de página.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Número de notas por página.
+      responses:
+        '200':
+          description: Lista de notas.
+        '401':
+          description: No autorizado, token inválido o ausente.
+
+  /api/notes/{name}:
+    put:
+      summary: Actualizar una nota
+      description: Actualizar el contenido de una nota a partir de su nombre.
+      security:
+        - bearerAuth: [] # Aplica la seguridad a esta operación
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Nombre de la nota a actualizar.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: Soy David Guisado5 pero actualizado otra vez.
+      responses:
+        '200':
+          description: Nota actualizada exitosamente.
+        '401':
+          description: No autorizado, token inválido o ausente.
+
+    delete:
+      summary: Eliminar una nota
+      description: Eliminar una nota a partir de su nombre.
+      security:
+        - bearerAuth: [] # Aplica la seguridad a esta operación
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Nombre de la nota a eliminar.
+      responses:
+        '200':
+          description: Nota eliminada exitosamente.
+        '401':
+          description: No autorizado, token inválido o ausente.

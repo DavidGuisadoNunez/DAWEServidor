@@ -1,10 +1,10 @@
-import { Router } from "express";
-import validateTokenMiddleware, { requireRole } from "../middleware/validateTokenMiddleware.js"; // Importamos el middleware `requireRole`
-import {controladorRutaAdmin,controladorRutaProtegida,controladorRutaPublica, controladorRutaVip,} from "../controllers/index.js";
+import { Router } from 'express';
+import validateTokenMiddleware, { requireRole } from '../middleware/validateTokenMiddleware.js'; // Importamos el middleware `requireRole`
+import { controladorRutaAdmin, controladorRutaProtegida, controladorRutaPublica, controladorRutaVip, } from '../controllers/index.js';
 
 const indexRouter = Router();
 
-indexRouter.get("/rutaProtegida", validateTokenMiddleware, controladorRutaProtegida);
+indexRouter.get('/rutaProtegida', validateTokenMiddleware, controladorRutaProtegida);
 
 indexRouter.get('/publica', controladorRutaPublica);
 

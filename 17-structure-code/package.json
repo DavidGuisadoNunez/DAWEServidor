@@ -24,6 +24,10 @@
     "@babel/preset-env": "^7.26.0",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
-    "sonarqube-scanner": "^4.2.5"
+    "sonarqube-scanner": "^4.2.5",
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
+    "neostandard": "github:neostandard/neostandard"
   }
 }

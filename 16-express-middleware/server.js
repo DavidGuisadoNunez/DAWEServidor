@@ -15,24 +15,24 @@ server.use(morgan('combined', {
   }
 }));
 
-function logDate(req, res, next) {
+function logDate (req, res, next) {
   logger.info(`[${new Date().toISOString()}] ${req.path}`);
   next();
 }
 
-function logMDW(req, res, next) {
+function logMDW (req, res, next) {
   logger.info('middleware');
   next();
 }
 
-function restrictedAccess(req, res, next) {
+function restrictedAccess (req, res, next) {
   const password = req.headers['password'];
   if (password === 'patata') {
     res.status(200).send({ message: 'Bienvenid@, disfrute del contenido' });
   } else {
     res.status(401).send({
       code: 401,
-      message: "Acceso restringido, por favor, incluya la palabra secreta en el parámetro 'password' en la cabecera de la petición"
+      message: 'Acceso restringido, por favor, incluya la palabra secreta en el parámetro \'password\' en la cabecera de la petición'
     });
   }
 }
@@ -54,11 +54,9 @@ server.get('/error', function (req, res, next) {
     next(error);
   }
 });
-
 server.use('*', (req, res) => {
   res.status(404).send('Not found');
 });
-
 server.use(function (err, req, res, next) {
   const status = err.status || 500;
   logger.error(`[${status}] ${err.message}`);

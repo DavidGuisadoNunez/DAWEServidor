@@ -1,8 +1,8 @@
 import fs from 'fs';
-import path from 'path';
+import path, { dirname } from 'path';
 import { logger } from '../utils/logger.js';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+
 import multer from 'multer';
 import archiver from 'archiver';
 
@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Definir la ruta a la carpeta de notas
-const notesDir = path.join(__dirname, '..', 'notes');  
+const notesDir = path.join(__dirname, '..', 'notes');
 
 // Configuración de multer
 const storage = multer.diskStorage({
@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 
 // Inicializar multer
 const upload = multer({
-  storage: storage,
+  storage,
   fileFilter: (req, file, cb) => {
     if (!file.originalname.endsWith('.note')) {
       return cb(new Error('Solo se permiten archivos .note'), false); // Filtrar solo archivos .note

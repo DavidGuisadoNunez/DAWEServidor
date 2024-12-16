@@ -1,9 +1,9 @@
 import expressLoader from './express.js';
 
-function init(app) {
-    expressLoader(app);
+function init (app) {
+  expressLoader(app);
 }
 
 export default {
-    init
+  init
 };

@@ -4,7 +4,6 @@ import logger from '../../src/utils/logger.js';
 jest.mock('../../src/utils/logger.js'); // Mock the logger module
 
 describe('Middleware and Error Controllers', () => {
-
   // Test for middlewareController
   describe('middlewareController', () => {
     it('should call logger.info and send a 200 status with the correct message', () => {
@@ -41,8 +40,8 @@ describe('Middleware and Error Controllers', () => {
     });
 
     it('should not swallow the error and pass it to next', () => {
-      const req = {}; 
-      const res = {}; 
+      const req = {};
+      const res = {};
       const next = jest.fn();
 
       try {

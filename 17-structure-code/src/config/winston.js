@@ -4,7 +4,7 @@ const { format, transports, createLogger } = winston;
 
 const {
   combine, timestamp, printf, colorize,
-} = format
+} = format;
 
 const winstonConfig = {
   transports: [
@@ -12,7 +12,7 @@ const winstonConfig = {
       format: combine(
         timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
         colorize(),
-        printf((info) => `[${info.timestamp}] ${info.level} ${info.message}`),
+        printf((info) => `[${info.timestamp}] ${info.level} ${info.message}`)
       ),
       silent: process.env.NODE_ENV === 'test',
     }),

@@ -9,12 +9,12 @@ const router = express.Router();
 const upload = multer({ dest: 'uploads/' }).array('files');
 
 // Rutas protegidas
-router.get('/',validateTokenMiddleware,  getNotes);
+router.get('/', validateTokenMiddleware, getNotes);
 router.post('/', validateTokenMiddleware, createNote);
 router.put('/:name', validateTokenMiddleware, updateNote);
-router.delete('/:name',validateTokenMiddleware, deleteNote);
+router.delete('/:name', validateTokenMiddleware, deleteNote);
 router.use((req, res) => {
-    res.status(404).send('Not Found');
+  res.status(404).send('Not Found');
 });
 
 // Ruta para subir archivos

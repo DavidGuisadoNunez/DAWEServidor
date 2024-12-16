@@ -4,22 +4,22 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-      "start": "node --watch server.js",
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "lint": "eslint",
-      "lint:fix": "eslint --fix ."
+        "start": "node --watch server.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint",
+        "lint:fix": "eslint --fix ."
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "description": "",
     "devDependencies": {
-      "@eslint/js": "^9.13.0",
-      "eslint": "^9.13.0",
-      "globals": "^15.11.0",
-      "neostandard": "github:neostandard/neostandard"
+        "@eslint/js": "^9.13.0",
+        "eslint": "^9.13.0",
+        "globals": "^15.11.0",
+        "neostandard": "github:neostandard/neostandard"
     },
     "dependencies": {
-      "express": "^4.21.1"
+        "express": "^4.21.1"
     }
-  }
+}

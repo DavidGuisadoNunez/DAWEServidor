@@ -17,5 +17,11 @@
     "express": "^4.21.1",
     "morgan": "^1.10.0",
     "winston": "^3.17.0"
-  }
+  }, 
+  "devDependencies": {
+        "@eslint/js": "^9.13.0",
+        "eslint": "^9.13.0",
+        "globals": "^15.11.0",
+        "neostandard": "github:neostandard/neostandard"
+    }
 }

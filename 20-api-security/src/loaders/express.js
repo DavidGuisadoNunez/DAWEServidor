@@ -7,12 +7,12 @@ import { loggerMiddleware } from '../middleware/loggerMiddleware.js';
 import { errorHandlingMiddleware } from '../middleware/errorHandlingMiddleware.js';
 
 export default function (app) {
-    app.use(morgan('combined', { stream: logger.stream }));
-    app.use(loggerMiddleware);
+  app.use(morgan('combined', { stream: logger.stream }));
+  app.use(loggerMiddleware);
 
-    app.use(express.json());
+  app.use(express.json());
 
-    app.use('/', indexRouter);
+  app.use('/', indexRouter);
 
-    app.use(errorHandlingMiddleware);
+  app.use(errorHandlingMiddleware);
 }

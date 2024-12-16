@@ -1,9 +1,9 @@
 import expressLoader from './express.js';
 
-function init(server) {
+function init (server) {
   expressLoader(server);
 }
 
 export default {
   init,
-}
+};

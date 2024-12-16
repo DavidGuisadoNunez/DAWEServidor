@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // Definir la carpeta de destino para los archivos subidos
     const uploadPath = path.join(__dirname, 'files');
-    
+
     // Si no existe la carpeta 'files', la creamos
     if (!fs.existsSync(uploadPath)) {
       fs.mkdirSync(uploadPath);

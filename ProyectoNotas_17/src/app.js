@@ -13,8 +13,8 @@ app.use(express.json());
 
 // Middleware de logger
 app.use((req, res, next) => {
-    logger.info(`Request: ${req.method} ${req.originalUrl}`);
-    next();
+  logger.info(`Request: ${req.method} ${req.originalUrl}`);
+  next();
 });
 
 // Rutas
@@ -22,8 +22,8 @@ app.use('/api/notes', notesRoutes);
 
 // Manejo de errores
 app.use((err, req, res, next) => {
-    logger.error(err.message);
-    res.status(500).json({ error: 'Internal Server Error' });
+  logger.error(err.message);
+  res.status(500).json({ error: 'Internal Server Error' });
 });
 
 export default app;

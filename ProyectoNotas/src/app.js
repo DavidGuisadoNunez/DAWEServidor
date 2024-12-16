@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors'; // Importa cors
 import { logger } from './utils/logger.js';
 import notesRoutes from './routes/notesRoutes.js';
 
@@ -7,6 +8,9 @@ import notesRoutes from './routes/notesRoutes.js';
 dotenv.config();
 
 const app = express();
+
+// Middleware de CORS
+app.use(cors());
 
 // Middleware de JSON
 app.use(express.json());

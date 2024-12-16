@@ -10,10 +10,16 @@
 			"name": "http://localhost:3100/api/notes",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"David9\",\r\n    \"content\": \"Soy David Guisado6.\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Daviddddd\",\r\n    \"content\": \"Soy David Guisado.\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,7 +46,13 @@
 			"name": "http://localhost:3100/api/notes",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes",
 					"protocol": "http",
@@ -61,7 +73,13 @@
 			"name": "http://localhost:3100/api/notes/David",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiSSBrbm93IHlvdXIgc2VjcmV0In0.o4QKyLiwJ41D6LDJUFosQRNFJHXNvTFpvUgQcepC14U",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"content\": \"Soy David Guisado5 pero actualizado otra vez.\"\r\n}",
@@ -72,7 +90,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3100/api/notes/David9",
+					"raw": "http://localhost:3100/api/notes/Daviddddd",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -81,7 +99,7 @@
 					"path": [
 						"api",
 						"notes",
-						"David9"
+						"Daviddddd"
 					]
 				},
 				"description": "Actualizar el contenido de una nota a partir de su nombre"
@@ -92,9 +110,15 @@
 			"name": "http://localhost:3100/api/notes/David3",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:3100/api/notes/David9",
+					"raw": "http://localhost:3100/api/notes/Daviddddd",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -103,7 +127,7 @@
 					"path": [
 						"api",
 						"notes",
-						"David9"
+						"Daviddddd"
 					]
 				},
 				"description": "Eliminar una nota a partir de su nombre"
@@ -114,7 +138,13 @@
 			"name": "http://localhost:3100/api/notes?sort=createdAt&order=asc",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes?sort=createdAt&order=asc",
 					"protocol": "http",
@@ -134,6 +164,11 @@
 						{
 							"key": "order",
 							"value": "asc"
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
 						}
 					]
 				},
@@ -145,7 +180,13 @@
 			"name": "http://localhost:3100/api/notes?sort=updatedAt&order=desc",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes?sort=updatedAt&order=desc",
 					"protocol": "http",
@@ -176,7 +217,13 @@
 			"name": "http://localhost:3100/api/notes?sort=title&order=desc",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes?sort=title&order=desc",
 					"protocol": "http",
@@ -207,7 +254,13 @@
 			"name": "http://localhost:3100/api/notes?sort=size&order=desc",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes?sort=size&order=desc",
 					"protocol": "http",
@@ -238,7 +291,13 @@
 			"name": "http://localhost:3100/api/notes?filter[title]=David4",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes?filter[title]=David4",
 					"protocol": "http",
@@ -265,7 +324,13 @@
 			"name": "http://localhost:3100/api/notes?filter[content]=actualizado",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes?filter[content]=actualizado",
 					"protocol": "http",
@@ -292,7 +357,13 @@
 			"name": "http://localhost:3100/api/notes?page=1&limit=2",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes?page=1&limit=2",
 					"protocol": "http",
@@ -354,7 +425,13 @@
 			"name": "http://localhost:3100/api/notes/upload",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "formdata",
 					"formdata": [

@@ -2,85 +2,82 @@ import fs from 'fs';
 import path, { dirname } from 'path';
 import { logger } from '../utils/logger.js';
 import { fileURLToPath } from 'url';
-
 import multer from 'multer';
 import archiver from 'archiver';
 
-// Obtener el directorio actual (equivalente a __dirname en CommonJS)
+// Obtener el directorio actual (__dirname)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Definir la ruta a la carpeta de notas
+// Ruta de la carpeta 'notes'
 const notesDir = path.join(__dirname, '..', 'notes');
 
-// Configuración de multer
+// Verificar si el directorio 'notes' existe
+if (!fs.existsSync(notesDir)) {
+  fs.mkdirSync(notesDir);
+}
+
+// Configuración de multer para subida de archivos
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, notesDir);  // Guardar los archivos en la carpeta 'notes'
+    cb(null, notesDir);
   },
   filename: (req, file, cb) => {
-    cb(null, file.originalname);  // Usar el nombre original del archivo
+    cb(null, file.originalname);
   }
 });
 
-// Inicializar multer
-const upload = multer({
+export const upload = multer({
   storage,
   fileFilter: (req, file, cb) => {
     if (!file.originalname.endsWith('.note')) {
-      return cb(new Error('Solo se permiten archivos .note'), false); // Filtrar solo archivos .note
+      return cb(new Error('Solo se permiten archivos con extensión .note'), false);
     }
     cb(null, true);
   }
-});
+}).array('files'); // Permite múltiples archivos
 
 // Obtener todas las notas
 export const getNotes = (req, res, next) => {
-  fs.readdir(notesDir, (err, files) => {
-    if (err) {
-      logger.error(`Error al leer las notas: ${err}`);
-      return next(err);
-    }
-    const notes = files.filter(file => file.endsWith('.note')).map(file => file.replace('.note', ''));
+  try {
+    const files = fs.readdirSync(notesDir).filter(file => file.endsWith('.note'));
+    let notes = files.map(file => ({ name: file.replace('.note', '') }));
 
     // Aplicar filtros
-    const { filter } = req.query;
-    let filteredNotes = notes;
+    const { filter = {}, page = 1, pageSize = 10 } = req.query;
 
-    // Filtro por título
-    if (filter && filter.title) {
-      filteredNotes = filteredNotes.filter(note => note.includes(filter.title));
+    if (filter.title) {
+      notes = notes.filter(note => note.name.includes(filter.title));
     }
 
-    // Filtro por fecha de creación
-    if (filter && filter.dateRange) {
+    if (filter.dateRange) {
       const { startDate, endDate } = filter.dateRange;
       const start = new Date(startDate);
       const end = new Date(endDate);
 
-      filteredNotes = filteredNotes.filter(note => {
-        const stats = fs.statSync(path.join(notesDir, `${note}.note`));
+      notes = notes.filter(note => {
+        const stats = fs.statSync(path.join(notesDir, `${note.name}.note`));
         const creationDate = new Date(stats.birthtime);
         return creationDate >= start && creationDate <= end;
       });
     }
 
     // Paginación
-    const page = parseInt(req.query.page) || 1;
-    const pageSize = parseInt(req.query.pageSize) || 10;
-    const totalNotes = filteredNotes.length;
+    const totalNotes = notes.length;
     const totalPages = Math.ceil(totalNotes / pageSize);
-
-    const paginatedNotes = filteredNotes.slice((page - 1) * pageSize, page * pageSize);
+    const paginatedNotes = notes.slice((page - 1) * pageSize, page * pageSize);
 
     res.json({
       notes: paginatedNotes,
       totalNotes,
       totalPages,
-      currentPage: page,
-      pageSize
+      currentPage: Number(page),
+      pageSize: Number(pageSize)
     });
-  });
+  } catch (err) {
+    logger.error(`Error al obtener notas: ${err.message}`);
+    next(err);
+  }
 };
 
 // Crear una nueva nota
@@ -88,17 +85,20 @@ export const createNote = (req, res, next) => {
   const { name, content } = req.body;
 
   if (!name || !content) {
-    return res.status(400).json({ error: 'Nombre y contenido son requeridos' });
+    return res.status(400).json({ error: 'Nombre y contenido son requeridos.' });
   }
 
   const filePath = path.join(notesDir, `${name}.note`);
+  if (fs.existsSync(filePath)) {
+    return res.status(400).json({ error: 'La nota ya existe.' });
+  }
 
-  fs.writeFile(filePath, content, (err) => {
+  fs.writeFile(filePath, content, err => {
     if (err) {
-      logger.error(`Error al guardar la nota: ${err}`);
+      logger.error(`Error al crear la nota: ${err.message}`);
       return next(err);
     }
-    res.status(201).json({ message: 'Nota creada con éxito' });
+    res.status(201).json({ message: 'Nota creada con éxito.', name });
   });
 };
 
@@ -108,21 +108,20 @@ export const updateNote = (req, res, next) => {
   const { content } = req.body;
 
   if (!content) {
-    return res.status(400).json({ error: 'Contenido es requerido' });
+    return res.status(400).json({ error: 'El contenido es requerido.' });
   }
 
   const filePath = path.join(notesDir, `${name}.note`);
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: 'Nota no encontrada.' });
+  }
 
-  fs.access(filePath, fs.constants.F_OK, (err) => {
+  fs.writeFile(filePath, content, err => {
     if (err) {
-      return res.status(404).json({ error: 'Nota no encontrada' });
+      logger.error(`Error al actualizar la nota: ${err.message}`);
+      return next(err);
     }
-    fs.writeFile(filePath, content, (err) => {
-      if (err) {
-        return next(err);
-      }
-      res.json({ message: 'Nota actualizada con éxito' });
-    });
+    res.json({ message: 'Nota actualizada con éxito.', name });
   });
 };
 
@@ -131,87 +130,52 @@ export const deleteNote = (req, res, next) => {
   const { name } = req.params;
   const filePath = path.join(notesDir, `${name}.note`);
 
-  fs.unlink(filePath, (err) => {
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: 'Nota no encontrada.' });
+  }
+
+  fs.unlink(filePath, err => {
     if (err) {
+      logger.error(`Error al eliminar la nota: ${err.message}`);
       return next(err);
     }
-    res.json({ message: 'Nota eliminada con éxito' });
+    res.json({ message: 'Nota eliminada con éxito.', name });
   });
 };
 
-// Subir uno o varios archivos .note
+// Subir archivos
 export const uploadNotes = (req, res, next) => {
-  const files = req.files;
-  if (!files || files.length === 0) {
-    return res.status(400).json({ error: 'No se han subido archivos' });
+  if (!req.files || req.files.length === 0) {
+    return res.status(400).json({ error: 'No se han subido archivos.' });
   }
-
-  // Verificar si los archivos ya existen
-  files.forEach(file => {
-    const filePath = path.join(notesDir, file.originalname);
-    if (fs.existsSync(filePath)) {
-      return res.status(400).json({ error: `El archivo ${file.originalname} ya existe` });
-    }
-  });
-
-  // Mover los archivos a la carpeta 'notes'
-  files.forEach(file => {
-    const filePath = path.join(notesDir, file.originalname);
-    fs.renameSync(file.path, filePath);
-  });
 
   res.status(200).json({
-    message: `${files.length} archivos subidos con éxito`,
-    files: files.map(file => file.originalname)
+    message: `${req.files.length} archivo(s) subido(s) con éxito.`,
+    files: req.files.map(file => file.originalname)
   });
 };
 
-// Exportar notas seleccionadas como un archivo ZIP
+// Exportar notas seleccionadas como ZIP
 export const exportNotes = (req, res, next) => {
-  const { filenames, title, startDate, endDate } = req.query;
-  const files = filenames ? filenames.split(',') : [];
+  const { filenames } = req.query;
 
-  if (files.length === 0) {
-    return res.status(400).json({ error: 'No se especificaron archivos para exportar' });
+  if (!filenames) {
+    return res.status(400).json({ error: 'No se especificaron archivos para exportar.' });
   }
 
-  // Filtros de exportación
-  let filteredFiles = files;
-
-  // Filtro por título
-  if (title) {
-    filteredFiles = filteredFiles.filter(file => file.includes(title));
-  }
-
-  // Filtro por rango de fechas
-  if (startDate || endDate) {
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-
-    filteredFiles = filteredFiles.filter(file => {
-      const stats = fs.statSync(path.join(notesDir, `${file}.note`));
-      const creationDate = new Date(stats.birthtime);
-      return (!startDate || creationDate >= start) && (!endDate || creationDate <= end);
-    });
-  }
-
-  // Verificar que los archivos existen
-  const filePaths = filteredFiles.map(file => path.join(notesDir, `${file}.note`));
-  const nonExistentFiles = filePaths.filter(filePath => !fs.existsSync(filePath));
-
-  if (nonExistentFiles.length > 0) {
-    return res.status(404).json({ error: `Los archivos no existen: ${nonExistentFiles.join(', ')}` });
-  }
-
-  // Crear un archivo comprimido ZIP con los archivos seleccionados
+  const files = filenames.split(',');
   const archive = archiver('zip', { zlib: { level: 9 } });
-
   res.attachment('notes.zip');
+
   archive.pipe(res);
 
-  // Agregar los archivos al archivo comprimido
-  filePaths.forEach(filePath => {
-    archive.file(filePath, { name: path.basename(filePath) });
+  files.forEach(file => {
+    const filePath = path.join(notesDir, `${file}.note`);
+    if (fs.existsSync(filePath)) {
+      archive.file(filePath, { name: `${file}.note` });
+    } else {
+      logger.warn(`Archivo no encontrado: ${file}`);
+    }
   });
 
   archive.finalize();

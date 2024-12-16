@@ -1,5 +1,6 @@
 import request from 'supertest';
-import app from '../src/app.js'; // Ajusta la ruta de acuerdo a tu estructura
+import app from '../src/app.js';
+import { describe, expect, it } from '@jest/globals';
 
 describe('Notas API', () => {
   it('debe obtener todas las notas', async () => {

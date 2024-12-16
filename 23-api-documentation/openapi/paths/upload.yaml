@@ -1,0 +1,14 @@
+post:
+  summary: Subir un archivo
+  description: Ruta para incluir archivos en la carpeta `files`.
+  requestBody:
+    required: true
+    content:
+      multipart/form-data:
+        schema:
+          $ref: '../components/schemas/file.yaml'
+  responses:
+    '200':
+      $ref: '../components/responses/upload.yaml'
+    '400':
+      description: Error en la subida del archivo.

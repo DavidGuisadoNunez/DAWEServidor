@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: API para Gestión de Archivos
+  description: API para subir y descargar archivos en un servidor local.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3050
+    description: Servidor Local
+paths:
+  /upload:
+    $ref: './paths/upload.yaml'
+  /download/{filename}:
+    $ref: './paths/download.yaml'
+components:
+  schemas:
+    file:
+      $ref: './components/schemas/file.yaml'
+  responses:
+    UploadSuccess:
+      $ref: './components/responses/upload.yaml'
+    DownloadSuccess:
+      $ref: './components/responses/download.yaml'

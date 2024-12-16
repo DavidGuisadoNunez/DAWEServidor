@@ -1,0 +1,15 @@
+get:
+  summary: Descargar un archivo
+  description: Ruta para descargar un archivo específico desde el servidor.
+  parameters:
+    - name: filename
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Nombre del archivo a descargar.
+  responses:
+    '200':
+      $ref: '../components/responses/download.yaml'
+    '404':
+      description: Archivo no encontrado.

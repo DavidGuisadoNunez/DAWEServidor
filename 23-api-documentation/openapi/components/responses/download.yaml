@@ -1,0 +1,6 @@
+description: Archivo descargado exitosamente.
+content:
+  application/octet-stream:
+    schema:
+      type: string
+      format: binary

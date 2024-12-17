@@ -14,10 +14,6 @@
     "lint:fix": "eslint --fix .",
     "test": "jest --coverage"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "transform": {}
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

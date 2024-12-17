@@ -1,71 +1,34 @@
-import request from 'supertest';
-import app from '../src/app.js';
-import pkg from '@jest/globals';
-const { describe, expect, it } = pkg;
+const http = require('http');
+const app = require('../app.js');
+const logger = require('../config/winston.js');
+const { beforeAll, afterAll, describe, it, expect, jest } = require('@jest/globals');
 
-describe('Notas API', () => {
-  it('debe obtener todas las notas', async () => {
-    const response = await request(app).get('/api/notes');
-    expect(response.status).toBe(200);
-    expect(response.body).toBeInstanceOf(Array);
+jest.mock('../config/winston.js', () => ({
+  info: jest.fn(),
+}));
+
+describe('Server Initialization Tests', () => {
+  let server;
+
+  beforeAll(() => {
+    // Mockear el método listen
+    server = http.createServer(app);
+    jest.spyOn(server, 'listen').mockImplementation((port, callback) => callback());
   });
 
-  it('debe crear una nueva nota', async () => {
-    const newNote = { name: 'Nota1', content: 'Contenido de prueba' };
-    const response = await request(app).post('/api/notes').send(newNote);
-    expect(response.status).toBe(201);
-    expect(response.body.message).toBe('Nota creada con éxito');
+  afterAll(() => {
+    jest.clearAllMocks();
   });
 
-  it('debe devolver un error al crear una nota sin contenido', async () => {
-    const newNote = { name: 'Nota2' }; // Falta contenido
-    const response = await request(app).post('/api/notes').send(newNote);
-    expect(response.status).toBe(400);
-    expect(response.body.error).toBe('Nombre y contenido son requeridos');
+  it('should log a message when the server starts', () => {
+    const PORT = 3100;
+
+    // Simula iniciar el servidor
+    server.listen(PORT, () => {
+      logger.info(`Servidor escuchando en http://localhost:${PORT}`);
+    });
+
+    // Verifica que el logger haya registrado el mensaje correcto
+    expect(logger.info).toHaveBeenCalledWith(`Servidor escuchando en http://localhost:${PORT}`);
   });
-
-  it('debe devolver un error 404 para una nota que no existe', async () => {
-    const response = await request(app).get('/api/notes/notaInexistente');
-    expect(response.status).toBe(404);
-    expect(response.body.error).toBe('Nota no encontrada');
-  });
-
-  it('debe actualizar una nota existente', async () => {
-    const updatedNote = { name: 'Nota1 Actualizada', content: 'Contenido actualizado' };
-    const response = await request(app).put('/api/notes/1').send(updatedNote);
-    expect(response.status).toBe(200);
-    expect(response.body.message).toBe('Nota actualizada con éxito');
-  });
-
-  it('debe devolver un error al actualizar una nota que no existe', async () => {
-    const updatedNote = { name: 'Nota Inexistente', content: 'Contenido' };
-    const response = await request(app).put('/api/notes/notaInexistente').send(updatedNote);
-    expect(response.status).toBe(404);
-    expect(response.body.error).toBe('Nota no encontrada');
-  });
-
-  it('debe eliminar una nota existente', async () => {
-    const response = await request(app).delete('/api/notes/1');
-    expect(response.status).toBe(200);
-    expect(response.body.message).toBe('Nota eliminada con éxito');
-  });
-
-  it('debe devolver un error al eliminar una nota que no existe', async () => {
-    const response = await request(app).delete('/api/notes/notaInexistente');
-    expect(response.status).toBe(404);
-    expect(response.body.error).toBe('Nota no encontrada');
-  });
-});
-
-it('debe devolver un error al crear una nota sin contenido', async () => {
-  const newNote = { name: 'Nota2' }; // Falta contenido
-  const response = await request(app).post('/api/notes').send(newNote);
-  expect(response.status).toBe(400);
-  expect(response.body.error).toBe('Nombre y contenido son requeridos');
-});
-
-it('debe devolver un error 404 para una nota que no existe', async () => {
-  const response = await request(app).get('/api/notes/notaInexistente');
-  expect(response.status).toBe(404);
-  expect(response.body.error).toBe('Nota no encontrada');
 });

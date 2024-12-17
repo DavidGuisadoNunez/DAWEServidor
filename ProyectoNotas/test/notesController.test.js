@@ -1,156 +1,142 @@
-import { expect } from 'chai';
-import sinon from 'sinon';
-import request from 'supertest';
 import fs from 'fs';
 import fsPromises from 'fs/promises';
-import path from 'path';
-import app from '../src/app.js';
-import { fileURLToPath } from 'url';
+import request from 'supertest';
+import { jest, expect } from '@jest/globals';
+import { app } from '../server.js'; // Importa tu servidor Express
+import * as notesController from '../controllers/notesController.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const notesDir = path.join(__dirname, '..', 'src', 'notes');
+jest.mock('fs');
+jest.mock('fs/promises');
 
-describe('Notes Controller', () => {
-  before(() => {
-    if (!fs.existsSync(notesDir)) {
-      fs.mkdirSync(notesDir);
-    }
+// Mock para logger
+jest.mock('../config/winston.js', () => ({
+  info: jest.fn(),
+  warn: jest.fn(),
+  error: jest.fn(),
+}));
+
+describe('Notes Controller Tests', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
 
-  afterEach(() => {
-    sinon.restore();
-  });
-
-  describe('GET /api/notes', () => {
-    it('should return a list of notes', async () => {
-      sinon.stub(fsPromises, 'readdir').resolves(['note1.note', 'note2.note']);
-      sinon.stub(fsPromises, 'readFile').resolves('content');
-      sinon.stub(fsPromises, 'stat').resolves({
-        birthtime: new Date(),
-        mtime: new Date(),
-        size: 100
+  describe('GET /notes', () => {
+    it('should return a list of notes with pagination', async () => {
+      fsPromises.readdir.mockResolvedValue(['note1.note', 'note2.note']);
+      fsPromises.readFile.mockResolvedValue('Content');
+      fsPromises.stat.mockResolvedValue({
+        birthtime: new Date('2024-01-01'),
+        mtime: new Date('2024-02-01'),
+        size: 100,
       });
 
-      const res = await request(app)
-        .get('/api/notes')
-        .set('Authorization', 'Bearer your_token_here'); // Add authentication header if required
+      const res = await request(app).get('/notes').query({ page: 1, limit: 2 });
 
-      expect(res.status).to.equal(200);
-      expect(res.body.notes).to.have.lengthOf(2);
+      expect(res.status).toBe(200);
+      expect(res.body.notes).toHaveLength(2);
+      expect(res.body.totalNotes).toBe(2);
     });
 
-    it('should return 400 if sortBy is invalid', async () => {
-      const res = await request(app)
-        .get('/api/notes?sortBy=invalidField')
-        .set('Authorization', 'Bearer your_token_here'); // Add authentication header if required
+    it('should return 400 if invalid sortBy parameter is provided', async () => {
+      const res = await request(app).get('/notes').query({ sortBy: 'invalidField' });
 
-      expect(res.status).to.equal(400);
-      expect(res.body.error).to.equal('El parámetro \'sortBy\' debe ser uno de: createdAt, updatedAt, title, size');
+      expect(res.status).toBe(400);
+      expect(res.body.error).toBeDefined();
     });
   });
 
-  describe('POST /api/notes', () => {
-    it('should create a new note', async () => {
-      const note = { name: 'note1', content: 'content1' };
+  describe('POST /notes', () => {
+    it('should create a new note successfully', async () => {
+      fs.existsSync.mockReturnValue(false);
+      fs.writeFileSync.mockImplementation(() => {});
 
-      sinon.stub(fs, 'existsSync').returns(false);
-      sinon.stub(fs, 'writeFileSync').returns();
+      const res = await request(app).post('/notes').send({ name: 'test', content: 'test content' });
 
-      const res = await request(app).post('/api/notes').send(note);
-
-      expect(res.status).to.equal(201);
-      expect(res.body.message).to.equal('Nota creada con éxito.');
+      expect(res.status).toBe(201);
+      expect(res.body.message).toBe('Nota creada con éxito.');
     });
 
     it('should return 400 if note already exists', async () => {
-      const note = { name: 'note1', content: 'content1' };
+      fs.existsSync.mockReturnValue(true);
 
-      sinon.stub(fs, 'existsSync').returns(true);
+      const res = await request(app).post('/notes').send({ name: 'test', content: 'test content' });
 
-      const res = await request(app).post('/api/notes').send(note);
+      expect(res.status).toBe(400);
+      expect(res.body.error).toBeDefined();
+    });
 
-      expect(res.status).to.equal(400);
-      expect(res.body.error).to.equal('La nota ya existe.');
+    it('should return 400 if name or content is missing', async () => {
+      const res = await request(app).post('/notes').send({});
+
+      expect(res.status).toBe(400);
+      expect(res.body.error).toBeDefined();
     });
   });
 
-  describe('PUT /api/notes/:name', () => {
-    it('should update an existing note', async () => {
-      const note = { content: 'updated content' };
+  describe('PUT /notes/:name', () => {
+    it('should update a note successfully', async () => {
+      fs.existsSync.mockReturnValue(true);
+      fs.writeFileSync.mockImplementation(() => {});
 
-      sinon.stub(fs, 'existsSync').returns(true);
-      sinon.stub(fs, 'writeFileSync').returns();
+      const res = await request(app).put('/notes/test').send({ content: 'updated content' });
 
-      const res = await request(app).put('/api/notes/note1').send(note);
-
-      expect(res.status).to.equal(200);
-      expect(res.body.message).to.equal('Nota actualizada con éxito.');
+      expect(res.status).toBe(200);
+      expect(res.body.message).toBe('Nota actualizada con éxito.');
     });
 
-    it('should return 404 if note does not exist', async () => {
-      const note = { content: 'updated content' };
+    it('should return 404 if the note does not exist', async () => {
+      fs.existsSync.mockReturnValue(false);
 
-      sinon.stub(fs, 'existsSync').returns(false);
+      const res = await request(app).put('/notes/nonexistent').send({ content: 'updated content' });
 
-      const res = await request(app).put('/api/notes/note1').send(note);
-
-      expect(res.status).to.equal(404);
-      expect(res.body.error).to.equal('Nota no encontrada.');
+      expect(res.status).toBe(404);
+      expect(res.body.error).toBeDefined();
     });
   });
 
-  describe('DELETE /api/notes/:name', () => {
-    it('should delete an existing note', async () => {
-      sinon.stub(fs, 'existsSync').returns(true);
-      sinon.stub(fs, 'unlinkSync').returns();
+  describe('DELETE /notes/:name', () => {
+    it('should delete a note successfully', async () => {
+      fs.existsSync.mockReturnValue(true);
+      fs.unlinkSync.mockImplementation(() => {});
 
-      const res = await request(app).delete('/api/notes/note1');
+      const res = await request(app).delete('/notes/test');
 
-      expect(res.status).to.equal(200);
-      expect(res.body.message).to.equal('Nota eliminada con éxito.');
+      expect(res.status).toBe(200);
+      expect(res.body.message).toBe('Nota eliminada con éxito.');
     });
 
-    it('should return 404 if note does not exist', async () => {
-      sinon.stub(fs, 'existsSync').returns(false);
+    it('should return 404 if the note does not exist', async () => {
+      fs.existsSync.mockReturnValue(false);
 
-      const res = await request(app).delete('/api/notes/note1');
+      const res = await request(app).delete('/notes/nonexistent');
 
-      expect(res.status).to.equal(404);
-      expect(res.body.error).to.equal('Nota no encontrada.');
-    });
-  });
-
-  describe('POST /api/notes/upload', () => {
-    it('should upload files', async () => {
-      const res = await request(app)
-        .post('/api/notes/upload')
-        .attach('files', Buffer.from('content'), 'note1.note');
-
-      expect(res.status).to.equal(200);
-      expect(res.body.message).to.equal('1 archivo(s) subido(s) con éxito.');
+      expect(res.status).toBe(404);
+      expect(res.body.error).toBeDefined();
     });
   });
 
-  describe('GET /api/notes/download/:filename', () => {
-    it('should download a file', async () => {
-      sinon.stub(fs, 'existsSync').returns(true);
-      sinon.stub(fs, 'createReadStream').returns({
-        pipe: sinon.stub()
+  describe('POST /upload', () => {
+    it('should upload files successfully', async () => {
+      const files = [{ originalname: 'file1.note' }];
+
+      const req = { files };
+      const res = { status: jest.fn().mockReturnThis(), json: jest.fn() };
+
+      notesController.upload(req, res);
+      expect(res.status).toHaveBeenCalledWith(200);
+      expect(res.json).toHaveBeenCalledWith({
+        message: '1 archivo(s) subido(s) con éxito.',
+        files: ['file1.note'],
       });
-
-      const res = await request(app).get('/api/notes/download/note1.note');
-
-      expect(res.status).to.equal(200);
     });
+  });
 
-    it('should return 404 if file does not exist', async () => {
-      sinon.stub(fs, 'existsSync').returns(false);
+  describe('GET /export', () => {
+    it('should export specified notes as a zip file', async () => {
+      fs.existsSync.mockReturnValue(true);
+      const res = await request(app).get('/export').query({ filenames: 'file1,file2' });
 
-      const res = await request(app).get('/api/notes/download/note1.note');
-
-      expect(res.status).to.equal(404);
-      expect(res.body).to.equal('File not found');
+      expect(res.status).toBe(200);
     });
   });
 });

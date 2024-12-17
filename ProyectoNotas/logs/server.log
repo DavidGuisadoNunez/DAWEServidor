@@ -174,3 +174,65 @@
 [17-12-2024 05:05:12] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
 [17-12-2024 05:05:18] [32minfo[39m: Request: GET /api/notes?sortBy=updatedAt&order=desc - Body: undefined - Query: {"sortBy":"updatedAt","order":"desc"} - Params: {}
 [17-12-2024 05:05:23] [32minfo[39m: Request: GET /api/notes?filter[title]=David - Body: undefined - Query: {"filter":{"title":"David"}} - Params: {}
+[17-12-2024 15:51:00] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 15:51:00] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 15:51:00] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 15:51:00] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 16:34:27] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:34:27] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:34:27] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:34:27] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 16:34:42] [32minfo[39m: Request: GET /openapi/doc/ - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:34:43] [32minfo[39m: Request: GET /openapi/doc/swagger-ui.css - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:34:43] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-bundle.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:34:43] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-standalone-preset.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:34:43] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-init.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:39] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:36:39] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:36:39] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:36:39] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 16:36:41] [32minfo[39m: Request: GET /openapi/doc/ - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:41] [32minfo[39m: Request: GET /favicon.ico - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/ - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/swagger-ui.css - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/swagger-ui-bundle.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/swagger-ui-init.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/swagger-ui-standalone-preset.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:53] [32minfo[39m: Request: GET /openapi/do/favicon-32x32.png - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:13] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:50:13] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:50:13] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:50:55] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:50:55] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:50:55] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:50:55] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:55] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 16:50:55] [32minfo[39m: Request: POST /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: POST /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: PUT /api/notes/note1 - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: PUT /api/notes/note1 - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: DELETE /api/notes/note1 - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: DELETE /api/notes/note1 - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: POST /api/notes/upload - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: GET /api/notes/download/note1.note - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: GET /api/notes/download/note1.note - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:51:43] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:51:43] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:51:43] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:51:43] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:51:43] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 16:52:38] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:52:38] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:52:38] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:52:38] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:52:38] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 16:54:03] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:54:03] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:54:03] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:54:03] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:54:03] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 16:55:14] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:55:14] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:55:14] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:55:14] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:55:14] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}

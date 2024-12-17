@@ -7,7 +7,14 @@ const rules = {
 };
 
 export default [
-  { languageOptions: { globals: globals.node } },
+  {
+    languageOptions: {
+      globals: {
+        ...globals.node, // Agrega los globals de Node
+        ...globals.mocha // Agrega los globals de Mocha
+      }
+    }
+  },
   pluginJs.configs.recommended,
   ...neostandard({
     semi: true,

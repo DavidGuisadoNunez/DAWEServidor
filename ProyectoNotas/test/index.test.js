@@ -1,6 +1,7 @@
 import request from 'supertest';
 import app from '../src/app.js';
-import { describe, expect, it } from '@jest/globals';
+import pkg from '@jest/globals';
+const { describe, expect, it } = pkg;
 
 describe('Notas API', () => {
   it('debe obtener todas las notas', async () => {

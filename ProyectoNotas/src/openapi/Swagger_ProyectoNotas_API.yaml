@@ -184,6 +184,8 @@ paths:
     get:
       summary: Descargar una nota
       description: Descargar un archivo `.note` específico.
+      security:
+        - bearerAuth: []
       parameters:
         - name: filename
           in: path

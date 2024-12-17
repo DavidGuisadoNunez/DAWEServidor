@@ -20,7 +20,7 @@ export const getNotes = async (req, res, next) => {
       filter = {},
       page = 1,
       limit = 5,
-      sortBy = 'createdAt',
+      sortBy = 'title',
       order = 'asc',
     } = req.query;
 

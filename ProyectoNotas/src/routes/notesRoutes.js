@@ -14,7 +14,7 @@ router.post('/', validateTokenMiddleware, createNote);
 router.put('/:name', validateTokenMiddleware, updateNote);
 router.delete('/:name', validateTokenMiddleware, deleteNote);
 router.post('/upload', validateTokenMiddleware, upload, uploadNotes);
-router.get('/download/:filename', downloadFile);
+router.get('/download/:filename', validateTokenMiddleware, downloadFile);
 router.use((req, res) => {
   res.status(404).send('Not Found');
 });

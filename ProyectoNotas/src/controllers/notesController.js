@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import multer from 'multer';
 import archiver from 'archiver';
+import logger from '../config/winston.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -224,3 +225,8 @@ export const downloadFile = (req, res) => {
     res.status(404).send('File not found');
   }
 };
+
+console.log(''); // Línea vacía para mayor visibilidad en consola
+logger.info('Servidor iniciado!!! Comienza a enviarme solicitudes :)');
+logger.warn('Gabri quiero un 10 en este proyecto');
+logger.error('Este proyecto ha sido muy largo jajajaja');

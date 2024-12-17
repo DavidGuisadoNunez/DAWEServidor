@@ -5,23 +5,19 @@ import yaml from 'js-yaml';
 import swaggerUi from 'swagger-ui-express';
 import path from 'path';
 import notesRoutes from './routes/notesRoutes.js';
-import {
-  corsMiddleware,
-  jsonMiddleware,
-  urlencodedMiddleware,
-  parseQueryMiddleware,
-  notFoundMiddleware,
-  errorHandlerMiddleware
-} from './middlewares/globalsMiddlewares.js';
+import { corsMiddleware, jsonMiddleware, urlencodedMiddleware, parseQueryMiddleware, notFoundMiddleware, errorHandlerMiddleware } from './middlewares/globalsMiddlewares.js';
+import requestLogger from './middlewares/requestLogger.js';
 
 const swaggerProyectoNotasAPI = yaml.load(fs.readFileSync(path.resolve('src/openapi/Swagger_ProyectoNotas_API.yaml'), 'utf8'));
 
 dotenv.config();
-
 const app = express();
 
 // Configurar CORS
 app.use(corsMiddleware);
+
+// Middleware de logging de requests
+app.use(requestLogger);
 
 // Middleware globales
 app.use(jsonMiddleware);

@@ -9,13 +9,13 @@ const {
 const logger = createLogger({
   level: 'info',
   format: combine(
-    timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    timestamp({ format: 'DD-MM-YYYY HH:mm:ss' }),
     colorize(),
     printf(({ timestamp, level, message }) => `[${timestamp}] ${level}: ${message}`)
   ),
   transports: [
     new transports.Console(),
-    new transports.File({ filename: 'combined.log' })
+    new transports.File({ filename: 'logs/server.log' })
   ],
   exitOnError: false,
 });

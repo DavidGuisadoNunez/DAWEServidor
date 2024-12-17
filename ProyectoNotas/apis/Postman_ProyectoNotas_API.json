@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Daviddddd\",\r\n    \"content\": \"Soy David Guisado.\"\r\n}",
+					"raw": "{\r\n    \"name\": \"DavidGuisadoNunez\",\r\n    \"content\": \"Soy David Guisado Núñez.\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,7 +82,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"content\": \"Soy David Guisado5 pero actualizado otra vez.\"\r\n}",
+					"raw": "{\r\n    \"content\": \"Soy David Guisado pero actualizado otra vez.\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -90,7 +90,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3100/api/notes/Daviddddd",
+					"raw": "http://localhost:3100/api/notes/DavidGuisadoNunez",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -99,7 +99,7 @@
 					"path": [
 						"api",
 						"notes",
-						"Daviddddd"
+						"DavidGuisadoNunez"
 					]
 				},
 				"description": "Actualizar el contenido de una nota a partir de su nombre"
@@ -118,7 +118,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3100/api/notes/Daviddddd",
+					"raw": "http://localhost:3100/api/notes/DavidGuisadoNunez",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -127,7 +127,7 @@
 					"path": [
 						"api",
 						"notes",
-						"Daviddddd"
+						"DavidGuisadoNunez"
 					]
 				},
 				"description": "Eliminar una nota a partir de su nombre"
@@ -146,7 +146,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3100/api/notes?sort=createdAt&order=asc",
+					"raw": "http://localhost:3100/api/notes?order=asc&sortBy=updatedAt",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -158,17 +158,17 @@
 					],
 					"query": [
 						{
-							"key": "sort",
-							"value": "createdAt"
+							"key": "",
+							"value": null,
+							"disabled": true
 						},
 						{
 							"key": "order",
 							"value": "asc"
 						},
 						{
-							"key": "",
-							"value": null,
-							"disabled": true
+							"key": "sortBy",
+							"value": "updatedAt"
 						}
 					]
 				},
@@ -188,7 +188,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3100/api/notes?sort=updatedAt&order=desc",
+					"raw": "http://localhost:3100/api/notes?sortBy=title&order=desc",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -200,8 +200,8 @@
 					],
 					"query": [
 						{
-							"key": "sort",
-							"value": "updatedAt"
+							"key": "sortBy",
+							"value": "title"
 						},
 						{
 							"key": "order",
@@ -225,7 +225,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3100/api/notes?sort=title&order=desc",
+					"raw": "http://localhost:3100/api/notes?sortBy=size&order=asc",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -237,12 +237,12 @@
 					],
 					"query": [
 						{
-							"key": "sort",
-							"value": "title"
+							"key": "sortBy",
+							"value": "size"
 						},
 						{
 							"key": "order",
-							"value": "desc"
+							"value": "asc"
 						}
 					]
 				},
@@ -262,7 +262,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3100/api/notes?sort=size&order=desc",
+					"raw": "http://localhost:3100/api/notes?sortBy=size&order=asc",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -274,12 +274,12 @@
 					],
 					"query": [
 						{
-							"key": "sort",
+							"key": "sortBy",
 							"value": "size"
 						},
 						{
 							"key": "order",
-							"value": "desc"
+							"value": "asc"
 						}
 					]
 				},
@@ -299,7 +299,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3100/api/notes?filter[title]=David4",
+					"raw": "http://localhost:3100/api/notes?filter[title]=David",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -312,7 +312,7 @@
 					"query": [
 						{
 							"key": "filter[title]",
-							"value": "David4"
+							"value": "David"
 						}
 					]
 				},
@@ -365,7 +365,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3100/api/notes?page=1&limit=2",
+					"raw": "http://localhost:3100/api/notes?page=2&limit=4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -378,11 +378,11 @@
 					"query": [
 						{
 							"key": "page",
-							"value": "1"
+							"value": "2"
 						},
 						{
 							"key": "limit",
-							"value": "2"
+							"value": "4"
 						}
 					]
 				},
@@ -394,7 +394,13 @@
 			"name": "http://localhost:3100/api/notes?filter[dateRange][startDate]=2024-12-01T22:15:00Z&filter[dateRange][endDate]=2024-12-01T22:20:59Z",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3100/api/notes?filter[dateRange][startDate]=2024-12-01T22:15:00Z&filter[dateRange][endDate]=2024-12-01T22:20:59Z",
 					"protocol": "http",
@@ -438,7 +444,7 @@
 						{
 							"key": "files",
 							"type": "file",
-							"src": "/C:/Users/User/Desktop/2_DAW/DAWEServidor/ProyectoNotas/notes/Holaaaaaa.note"
+							"src": "/C:/Users/User/Desktop/2_DAW/DAWEServidor/22-api-files/files/Davilito.note"
 						}
 					]
 				},
@@ -456,6 +462,29 @@
 					]
 				},
 				"description": "Subida de ficheros .note a la carpeta /notes"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes/download/David2.note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes/download/David2.note",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes",
+						"download",
+						"David2.note"
+					]
+				},
+				"description": "Descarga de fichero"
 			},
 			"response": []
 		}

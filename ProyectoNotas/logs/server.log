@@ -113,3 +113,4 @@
 [32minfo[39m: Request: GET /favicon.ico {"timestamp":"2024-12-16T02:45:44.629Z"}
 [32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-16T02:46:02.197Z"}
 [32minfo[39m: Request: GET /api/notes/sorted?sort=updatedAt&order=asc {"timestamp":"2024-12-16T02:46:18.021Z"}
+[31merror[39m: Error al obtener notas: The "cb" argument must be of type function. Received undefined {"timestamp":"2024-12-16T18:00:58.408Z"}

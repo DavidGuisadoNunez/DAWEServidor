@@ -3,6 +3,11 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import qs from 'qs'; // Para parámetros anidados
 import notesRoutes from './routes/notesRoutes.js';
+import fs from 'fs';
+import yaml from 'js-yaml';
+import swaggerUi from 'swagger-ui-express';
+import path from 'path';
+const swaggerProyectoNotasAPI = yaml.load(fs.readFileSync(path.resolve('src/openapi/Swagger_ProyectoNotas_API.yaml'), 'utf8'));
 
 dotenv.config();
 
@@ -27,6 +32,8 @@ app.use((req, res, next) => {
 
 // Rutas principales
 app.use('/api/notes', notesRoutes);
+
+app.use('/openapi/doc', swaggerUi.serve, swaggerUi.setup(swaggerProyectoNotasAPI));
 
 // Middleware para manejar rutas no encontradas
 app.use((req, res) => {

@@ -1,0 +1,238 @@
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:43:26.251Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:44:09.582Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:44:16.932Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:44:21.672Z"}
+[32minfo[39m: Request: GET /api/notes/David {"timestamp":"2024-12-01T22:44:35.265Z"}
+[32minfo[39m: Request: GET /api/notes/David1 {"timestamp":"2024-12-01T22:44:41.684Z"}
+[32minfo[39m: Request: GET /api/notes/David3 {"timestamp":"2024-12-01T22:45:06.810Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:48:55.396Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:49:07.773Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:49:12.836Z"}
+[32minfo[39m: Request: PUT /api/notes/David5 {"timestamp":"2024-12-01T22:49:28.486Z"}
+[32minfo[39m: Request: DELETE /api/notes/David5 {"timestamp":"2024-12-01T22:49:54.216Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:50:05.085Z"}
+[32minfo[39m: Request: PUT /api/notes/David7 {"timestamp":"2024-12-01T22:52:42.815Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:53:02.374Z"}
+[32minfo[39m: Request: POST /api/notes {"timestamp":"2024-12-01T22:53:21.246Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:53:46.650Z"}
+[32minfo[39m: Request: DELETE /api/notes/David9 {"timestamp":"2024-12-01T22:53:59.254Z"}
+[31merror[39m: ENOENT: no such file or directory, unlink 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\src\notes\David9.note' {"timestamp":"2024-12-01T22:53:59.259Z"}
+[32minfo[39m: Request: PUT /api/notes/David9 {"timestamp":"2024-12-01T22:54:12.067Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T22:54:17.620Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T23:22:48.108Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt:desc&filter={%22title%22:%22nota%22,%22dateRange%22:{%22startDate%22:%222023-01-01%22,%22endDate%22:%222024-01-01%22}}&page=1&limit=5 {"timestamp":"2024-12-01T23:23:38.637Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt:desc&filter={%22title%22:%22nota%22,%22dateRange%22:{%22startDate%22:%222024-01-01%22,%22endDate%22:%222024-12-01%22}}&page=1&limit=5 {"timestamp":"2024-12-01T23:24:02.066Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt:desc&filter={%22title%22:%22David4%22}}&page=1&limit=5 {"timestamp":"2024-12-01T23:25:32.913Z"}
+[31merror[39m: Unexpected non-whitespace character after JSON at position 18 {"timestamp":"2024-12-01T23:25:32.917Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt:desc&filter={%22title%22:%22David4.note%22}}&page=1&limit=5 {"timestamp":"2024-12-01T23:25:52.631Z"}
+[31merror[39m: Unexpected non-whitespace character after JSON at position 23 {"timestamp":"2024-12-01T23:25:52.636Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T23:26:07.682Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22important%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:27:56.905Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:28:05.555Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22title%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:17.620Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22contentt%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:28.591Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:35.837Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22hiii%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:41.006Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22content%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:31:49.226Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:32:04.226Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=1&limit=5 {"timestamp":"2024-12-01T23:32:30.290Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=2&limit=5 {"timestamp":"2024-12-01T23:33:15.093Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=2&limit=5 {"timestamp":"2024-12-01T23:33:23.279Z"}
+[32minfo[39m: Request: GET /api/notes?filter={%22name%22:%22David%22}&page=2&limit=5 {"timestamp":"2024-12-01T23:33:29.524Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=5&sort=createdAt&order=desc {"timestamp":"2024-12-01T23:37:10.948Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=5&sort=createdAt&order=desc {"timestamp":"2024-12-01T23:37:31.802Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=5&sort=createdAt&order=desc {"timestamp":"2024-12-01T23:38:33.535Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=9&sort=createdAt&order=desc {"timestamp":"2024-12-01T23:38:40.515Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt&order=asc {"timestamp":"2024-12-01T23:45:47.850Z"}
+[32minfo[39m: Request: GET /api/notes?sort=updatedAt&order=desc {"timestamp":"2024-12-01T23:46:43.798Z"}
+[32minfo[39m: Request: GET /api/notes?sort=updatedAt&order=desc {"timestamp":"2024-12-01T23:47:28.756Z"}
+[32minfo[39m: Request: GET /api/notes?sort=title&order=asc {"timestamp":"2024-12-01T23:47:59.822Z"}
+[32minfo[39m: Request: GET /api/notes?sort=title&order=desc {"timestamp":"2024-12-01T23:48:13.311Z"}
+[32minfo[39m: Request: GET /api/notes?sort=size&order=desc {"timestamp":"2024-12-01T23:48:51.453Z"}
+[32minfo[39m: Request: GET /api/notes?filter[title]=David {"timestamp":"2024-12-01T23:49:51.985Z"}
+[32minfo[39m: Request: GET /api/notes?filter[title]=David4 {"timestamp":"2024-12-01T23:50:04.235Z"}
+[32minfo[39m: Request: GET /api/notes?filter[content]=importante {"timestamp":"2024-12-01T23:50:39.455Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T23:50:50.548Z"}
+[32minfo[39m: Request: GET /api/notes?filter[content]=actualizado {"timestamp":"2024-12-01T23:51:03.552Z"}
+[32minfo[39m: Request: GET /api/notes?filter[title]=David4 {"timestamp":"2024-12-01T23:52:47.494Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-01T23:52:58.222Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-01&filter[dateRange][endDate]=2024-12-01 {"timestamp":"2024-12-01T23:53:36.384Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-02&filter[dateRange][endDate]=2024-12-01 {"timestamp":"2024-12-01T23:53:47.256Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-02&filter[dateRange][endDate]=2024-12-02 {"timestamp":"2024-12-01T23:53:53.276Z"}
+[32minfo[39m: Request: GET /api/notes?page=1&limit=2 {"timestamp":"2024-12-01T23:54:54.154Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-01T22:00:00Z&filter[dateRange][endDate]=2024-12-01T23:59:59Z {"timestamp":"2024-12-01T23:57:58.879Z"}
+[32minfo[39m: Request: GET /api/notes?filter[dateRange][startDate]=2024-12-01T22:15:00Z&filter[dateRange][endDate]=2024-12-01T22:20:59Z {"timestamp":"2024-12-01T23:58:20.649Z"}
+[32minfo[39m: Request: GET /api/note {"timestamp":"2024-12-02T00:00:56.153Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-02T00:01:08.430Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt&order=asc {"timestamp":"2024-12-02T00:01:33.469Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt&order=asc {"timestamp":"2024-12-02T00:01:33.985Z"}
+[32minfo[39m: Request: GET /favicon.ico {"timestamp":"2024-12-02T00:01:34.985Z"}
+[32minfo[39m: Request: GET /api/notes?sort=createdAt&order=asc {"timestamp":"2024-12-02T00:01:36.246Z"}
+[32minfo[39m: Request: GET /api/notes?sort=updatedAt&order=desc {"timestamp":"2024-12-02T00:01:47.592Z"}
+[32minfo[39m: Request: GET /api/notes/upload {"timestamp":"2024-12-02T00:10:35.912Z"}
+[32minfo[39m: Request: GET /api/notes/uploadNotes {"timestamp":"2024-12-02T00:10:43.174Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:13:53.473Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:14:05.981Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:19:43.712Z"}
+[31merror[39m: ENOENT: no such file or directory, open 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\uploads\a488f4c32c5ffa973e49e8163a11d39d' {"timestamp":"2024-12-02T00:19:43.759Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:22:50.125Z"}
+[31merror[39m: ENOENT: no such file or directory, open 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\uploads\5068ac47177a1eb002217efa61872495' {"timestamp":"2024-12-02T00:22:50.133Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:33:33.234Z"}
+[31merror[39m: ENOENT: no such file or directory, open 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\uploads\a90423414463e254a1621133da4fecfd' {"timestamp":"2024-12-02T00:33:33.237Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:34:30.363Z"}
+[31merror[39m: ENOENT: no such file or directory, open 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\uploads\2bccad48e95dbdda1f58ce123d8f7e42' {"timestamp":"2024-12-02T00:34:30.370Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:43:40.508Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:43:57.114Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T00:43:57.123Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:44:09.247Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T00:44:09.258Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:44:28.000Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T00:44:28.011Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T00:45:29.298Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T15:44:19.527Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T15:44:19.740Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-02T15:44:45.024Z"}
+[31merror[39m: Cannot set headers after they are sent to the client {"timestamp":"2024-12-02T15:44:45.154Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-13T23:16:06.300Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-13T23:19:34.860Z"}
+[32minfo[39m: Request: DELETE /api/notes/David9 {"timestamp":"2024-12-13T23:19:49.193Z"}
+[32minfo[39m: Request: DELETE /api/notes/David9 {"timestamp":"2024-12-13T23:20:09.964Z"}
+[31merror[39m: ENOENT: no such file or directory, unlink 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\src\notes\David9.note' {"timestamp":"2024-12-13T23:20:09.977Z"}
+[32minfo[39m: Request: DELETE /api/notes/David9 {"timestamp":"2024-12-13T23:20:29.882Z"}
+[32minfo[39m: Request: GET /api/notes/David99 {"timestamp":"2024-12-13T23:21:27.885Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-13T23:23:53.215Z"}
+[32minfo[39m: Request: DELETE /api/notes/Hola {"timestamp":"2024-12-13T23:24:15.066Z"}
+[32minfo[39m: Request: DELETE /api/notes/Hola {"timestamp":"2024-12-13T23:24:35.022Z"}
+[31merror[39m: ENOENT: no such file or directory, unlink 'C:\Users\User\Desktop\2_DAW\DAWEServidor\ProyectoNotas_17\src\notes\Hola.note' {"timestamp":"2024-12-13T23:24:35.032Z"}
+[32minfo[39m: Request: DELETE /api/notes/Holaa {"timestamp":"2024-12-13T23:24:52.054Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-13T23:26:50.078Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-13T23:27:32.202Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-13T23:28:26.451Z"}
+[32minfo[39m: Request: POST /api/notes/upload {"timestamp":"2024-12-14T00:27:27.206Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-16T02:45:44.345Z"}
+[32minfo[39m: Request: GET /favicon.ico {"timestamp":"2024-12-16T02:45:44.629Z"}
+[32minfo[39m: Request: GET /api/notes {"timestamp":"2024-12-16T02:46:02.197Z"}
+[32minfo[39m: Request: GET /api/notes/sorted?sort=updatedAt&order=asc {"timestamp":"2024-12-16T02:46:18.021Z"}
+[31merror[39m: Error al obtener notas: The "cb" argument must be of type function. Received undefined {"timestamp":"2024-12-16T18:00:58.408Z"}
+[2024-12-17 04:45:39] [32minfo[39m: Mensaje de información
+[2024-12-17 04:45:39] [31merror[39m: Mensaje de error
+[2024-12-17 04:49:26] [32minfo[39m: Mensaje de información
+[2024-12-17 04:49:26] [31merror[39m: Mensaje de error
+[2024-12-17 04:49:30] [32minfo[39m: Request: GET /api/notes?sortBy=updatedAt&order=desc - Body: undefined - Query: {"sortBy":"updatedAt","order":"desc"} - Params: {}
+[2024-12-17 04:50:06] [32minfo[39m: Servidor iniciado!!!
+[2024-12-17 04:50:28] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[2024-12-17 04:50:31] [32minfo[39m: Request: GET /api/notes?sortBy=updatedAt&order=desc - Body: undefined - Query: {"sortBy":"updatedAt","order":"desc"} - Params: {}
+[2024-12-17 04:50:42] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:50:46] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:50:48] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:50:49] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:50:50] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:51:01] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:51:06] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:51:07] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:51:08] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:51:09] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:51:10] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[2024-12-17 04:51:30] [32minfo[39m: Request: GET /api/notes?sortBy=size&order=asc - Body: undefined - Query: {"sortBy":"size","order":"asc"} - Params: {}
+[17-12-2024 04:53:17] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 04:55:01] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 04:55:01] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 04:55:01] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 04:58:48] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 04:58:48] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 04:58:48] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 04:58:48] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 04:58:55] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 04:58:55] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 04:58:55] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 04:58:55] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 04:59:45] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 04:59:45] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 04:59:45] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 04:59:46] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 05:00:34] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 05:00:34] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 05:00:34] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 05:00:34] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 05:02:32] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 05:02:32] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 05:02:32] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 05:02:32] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 05:02:37] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 05:02:37] [32minfo[39m: Notas obtenidas con éxito
+[17-12-2024 05:03:31] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 05:03:31] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 05:03:31] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 05:03:31] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 05:03:34] [32minfo[39m: Request: GET /api/notess - Body: undefined - Query: {} - Params: {}
+[17-12-2024 05:03:43] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 05:03:43] [32minfo[39m: Notas obtenidas con éxito
+[17-12-2024 05:05:09] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 05:05:09] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 05:05:09] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 05:05:09] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 05:05:12] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 05:05:18] [32minfo[39m: Request: GET /api/notes?sortBy=updatedAt&order=desc - Body: undefined - Query: {"sortBy":"updatedAt","order":"desc"} - Params: {}
+[17-12-2024 05:05:23] [32minfo[39m: Request: GET /api/notes?filter[title]=David - Body: undefined - Query: {"filter":{"title":"David"}} - Params: {}
+[17-12-2024 15:51:00] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 15:51:00] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 15:51:00] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 15:51:00] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 16:34:27] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:34:27] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:34:27] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:34:27] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 16:34:42] [32minfo[39m: Request: GET /openapi/doc/ - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:34:43] [32minfo[39m: Request: GET /openapi/doc/swagger-ui.css - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:34:43] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-bundle.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:34:43] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-standalone-preset.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:34:43] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-init.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:39] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:36:39] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:36:39] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:36:39] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 16:36:41] [32minfo[39m: Request: GET /openapi/doc/ - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:41] [32minfo[39m: Request: GET /favicon.ico - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/ - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/swagger-ui.css - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/swagger-ui-bundle.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/swagger-ui-init.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:44] [32minfo[39m: Request: GET /openapi/do/swagger-ui-standalone-preset.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:36:53] [32minfo[39m: Request: GET /openapi/do/favicon-32x32.png - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:13] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:50:13] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:50:13] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:50:55] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:50:55] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:50:55] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:50:55] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:55] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 16:50:55] [32minfo[39m: Request: POST /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: POST /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: PUT /api/notes/note1 - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: PUT /api/notes/note1 - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: DELETE /api/notes/note1 - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: DELETE /api/notes/note1 - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: POST /api/notes/upload - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: GET /api/notes/download/note1.note - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:50:56] [32minfo[39m: Request: GET /api/notes/download/note1.note - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:51:43] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:51:43] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:51:43] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:51:43] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:51:43] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 16:52:38] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:52:38] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:52:38] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:52:38] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:52:38] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 16:54:03] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:54:03] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:54:03] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:54:03] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:54:03] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 16:55:14] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 16:55:14] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 16:55:14] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 16:55:14] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 16:55:14] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}

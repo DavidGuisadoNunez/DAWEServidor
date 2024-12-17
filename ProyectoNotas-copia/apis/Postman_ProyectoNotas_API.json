@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "c74f2d66-cfb9-4abc-b6fc-21de058cdce6",
+		"name": "ProyectoNotas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39317056"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3100/api/notes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"DavidGuisadoNunez\",\r\n    \"content\": \"Soy David Guisado Núñez.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					]
+				},
+				"description": "Crear notas inclutyendo name y content en el body"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					]
+				},
+				"description": "Listar el nombre de todas las notas existentes"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes/David",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiSSBrbm93IHlvdXIgc2VjcmV0In0.o4QKyLiwJ41D6LDJUFosQRNFJHXNvTFpvUgQcepC14U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Soy David Guisado pero actualizado otra vez.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/notes/DavidGuisadoNunez",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes",
+						"DavidGuisadoNunez"
+					]
+				},
+				"description": "Actualizar el contenido de una nota a partir de su nombre"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes/David3",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes/DavidGuisadoNunez",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes",
+						"DavidGuisadoNunez"
+					]
+				},
+				"description": "Eliminar una nota a partir de su nombre"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?sort=createdAt&order=asc",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?order=asc&sortBy=updatedAt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						},
+						{
+							"key": "sortBy",
+							"value": "updatedAt"
+						}
+					]
+				},
+				"description": "Listar las notas por fecha de creación ascendente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?sort=updatedAt&order=desc",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?sortBy=title&order=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "title"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				},
+				"description": "Listar las notas por fecha de edición descendente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?sort=title&order=desc",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?sortBy=size&order=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "size"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				},
+				"description": "Listar las notas por título descendente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?sort=size&order=desc",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?sortBy=size&order=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "size"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				},
+				"description": "Lista las notas por tamaño descendente"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?filter[title]=David4",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?filter[title]=David",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter[title]",
+							"value": "David"
+						}
+					]
+				},
+				"description": "Listar las notas que contienen un texto específico en el título"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?filter[content]=actualizado",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?filter[content]=actualizado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter[content]",
+							"value": "actualizado"
+						}
+					]
+				},
+				"description": "Listar las notas que tienen un texto específico en el contenido"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?page=1&limit=2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?page=2&limit=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "4"
+						}
+					]
+				},
+				"description": "Listar las notas con ciertos elementos por página"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes?filter[dateRange][startDate]=2024-12-01T22:15:00Z&filter[dateRange][endDate]=2024-12-01T22:20:59Z",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3100/api/notes?filter[dateRange][startDate]=2024-12-01T22:15:00Z&filter[dateRange][endDate]=2024-12-01T22:20:59Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "filter[dateRange][startDate]",
+							"value": "2024-12-01T22:15:00Z"
+						},
+						{
+							"key": "filter[dateRange][endDate]",
+							"value": "2024-12-01T22:20:59Z"
+						}
+					]
+				},
+				"description": "Listar notas con rango de fechas en la creación"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes/upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.tfYaoHFD_H-8AEAVntxxQNzto31hIXlYrJIWer1SuEg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/User/Desktop/2_DAW/DAWEServidor/22-api-files/files/Davilito.note"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/notes/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes",
+						"upload"
+					]
+				},
+				"description": "Subida de ficheros .note a la carpeta /notes"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3100/api/notes/download/David2.note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/notes/download/David2.note",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"notes",
+						"download",
+						"David2.note"
+					]
+				},
+				"description": "Descarga de fichero"
+			},
+			"response": []
+		}
+	]
+}

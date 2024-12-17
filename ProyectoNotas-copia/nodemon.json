@@ -1,0 +1,9 @@
+{
+    "watch": ["index.js", "routes/", "controllers/"],
+    "ext": "js,json",
+    "ignore": ["node_modules/"],
+    "exec": "node src/index.js",
+    "events": {
+        "exit": "taskkill /IM node.exe /F"
+    }
+}

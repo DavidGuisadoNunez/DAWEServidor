@@ -236,3 +236,21 @@
 [17-12-2024 16:55:14] [31merror[39m: Este proyecto ha sido muy largo jajajaja
 [17-12-2024 16:55:14] [32minfo[39m: Request: GET /api/notes - Body: undefined - Query: {} - Params: {}
 [17-12-2024 16:55:14] [32minfo[39m: Request: GET /api/notes?sortBy=invalidField - Body: undefined - Query: {"sortBy":"invalidField"} - Params: {}
+[17-12-2024 23:49:46] [32minfo[39m: Servidor iniciado!!! Comienza a enviarme solicitudes :)
+[17-12-2024 23:49:46] [33mwarn[39m: Gabri quiero un 10 en este proyecto
+[17-12-2024 23:49:46] [31merror[39m: Este proyecto ha sido muy largo jajajaja
+[17-12-2024 23:49:46] [32minfo[39m: Servidor escuchando en http://localhost:3100
+[17-12-2024 23:50:14] [32minfo[39m: Request: GET /openapi/doc/ - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:14] [32minfo[39m: Request: GET /openapi/doc/swagger-ui.css - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:14] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-bundle.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:14] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-standalone-preset.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:14] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-init.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:15] [32minfo[39m: Request: GET /openapi/doc/favicon-32x32.png - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:19] [32minfo[39m: Request: GET /openapi/doc - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:19] [32minfo[39m: Request: GET /openapi/doc/ - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:19] [32minfo[39m: Request: GET /openapi/doc/swagger-ui.css - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:19] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-bundle.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:19] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-standalone-preset.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:50:19] [32minfo[39m: Request: GET /openapi/doc/swagger-ui-init.js - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:51:22] [32minfo[39m: Request: POST /api/notes - Body: undefined - Query: {} - Params: {}
+[17-12-2024 23:51:57] [32minfo[39m: Request: PUT /api/notes/DavidGuisado66 - Body: undefined - Query: {} - Params: {}

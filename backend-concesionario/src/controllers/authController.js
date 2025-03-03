@@ -1,4 +1,5 @@
 import * as authService from '../services/authService.js';
+import ApiError from '../utils/errorHandler.js';
 
 /**
  * Registro de usuario
@@ -16,7 +17,7 @@ export const register = async (req, res) => {
 /**
  * Login de usuario
  */
-export const login = async (req, res) => {
+export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const { user, accessToken, refreshToken } = await authService.loginUser(email, password);
@@ -27,6 +28,6 @@ export const login = async (req, res) => {
 
     res.status(200).json({ success: true, data: { user, accessToken, refreshToken } });
   } catch (error) {
-    res.status(400).json({ success: false, message: error.message });
+    next(new ApiError(401, 'Credenciales incorrectas'));
   }
 };

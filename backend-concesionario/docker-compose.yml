@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo_db
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: davguisadonunez
+      MONGO_INITDB_ROOT_PASSWORD: davguisadonunez
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: .
+    container_name: backend_api
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      NODE_ENV: production
+      MONGO_URI: mongodb+srv://davguisadonunez:davguisadonunez@concesionariodb.ux7pn.mongodb.net/?retryWrites=true&w=majority&appName=concesionarioDB
+    command: ["npm", "run", "start"]
+
+volumes:
+  mongo_data:

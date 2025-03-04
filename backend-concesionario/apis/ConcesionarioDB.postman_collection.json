@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "d8c88069-78f9-41d0-a365-68cef9b5c41e",
+		"name": "ConcesionarioDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39317056"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Listar Usuarios",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2M2MDExOTc0YTJhOGJhNzFjNjE5OGIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDExMDQ1NDAsImV4cCI6MTc0MTEwODE0MH0.BGrzXH8q8Ly5tpC49_-XgJmHPXkFAUfzBGfyMUYy4eI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuario por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2M2MDExOTc0YTJhOGJhNzFjNjE5OGIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDEwNDQ4NjAsImV4cCI6MTc0MTA0ODQ2MH0.xkGBgOgtX19eVqfL1cx6llU-XxJynjMEb7-QjJJTS0c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users/67c6011974a2a8ba71c6198b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"67c6011974a2a8ba71c6198b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir Usuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2M1ZjJjNjNiYzg2OTEzMGNhNWNhZjAiLCJpYXQiOjE3NDEwMjkxNTQsImV4cCI6MTc0MTAzMjc1NH0._obLbsLi6okRA16jgS19UKPf5iMaAv-cLAfw6G6GkM4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"David\",\r\n  \"lastName\": \"Guisado Nuñez\",\r\n  \"email\": \"davidguisado3@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"user\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2M1ZjJjNjNiYzg2OTEzMGNhNWNhZjAiLCJpYXQiOjE3NDEwMjkxNTQsImV4cCI6MTc0MTAzMjc1NH0._obLbsLi6okRA16jgS19UKPf5iMaAv-cLAfw6G6GkM4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"David\",\r\n  \"lastName\": \"Guisado\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/67c6011974a2a8ba71c6198b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"67c6011974a2a8ba71c6198b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2M2MDExOTc0YTJhOGJhNzFjNjE5OGIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDEwNDQ4NjAsImV4cCI6MTc0MTA0ODQ2MH0.xkGBgOgtX19eVqfL1cx6llU-XxJynjMEb7-QjJJTS0c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users/67c601fa7e6bb77a769c52bd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"67c601fa7e6bb77a769c52bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Paginación y filtrado",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2M2MDExOTc0YTJhOGJhNzFjNjE5OGIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDEwNDQ4NjAsImV4cCI6MTc0MTA0ODQ2MH0.xkGBgOgtX19eVqfL1cx6llU-XxJynjMEb7-QjJJTS0c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users?page=1&limit=5&role=user&firstName=David",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "role",
+									"value": "user"
+								},
+								{
+									"key": "firstName",
+									"value": "David"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ruta no encontrada",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"David\",\r\n  \"lastName\": \"Guisadoo\",\r\n  \"email\": \"david@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar usuario con nombre, apellido, email y contraseña",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2M2MDExOTc0YTJhOGJhNzFjNjE5OGIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDExMDUxMjAsImV4cCI6MTc0MTEwODcyMH0.ekkVEIpc9GDJQfIkWa4UusX3idh1bUnzirhGZu8x5Xk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Davidd\",\r\n  \"lastName\": \"GuisadoNuñez\",\r\n  \"email\": \"davilitoo2@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logeo a partir de email y password",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"daviddd@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recoger token por login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"david@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

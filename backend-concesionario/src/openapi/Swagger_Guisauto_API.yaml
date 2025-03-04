@@ -1,0 +1,187 @@
+openapi: 3.0.0
+info:
+  title: ConcesionarioDB API
+  description: API para la gestión de usuarios y autenticación en un concesionario de vehículos.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000/api
+    description: Servidor local
+paths:
+  /auth/register:
+    post:
+      summary: Registrar un nuevo usuario
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "201":
+          description: Usuario registrado correctamente
+        "400":
+          description: Error en la solicitud
+  /auth/login:
+    post:
+      summary: Iniciar sesión
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: Inicio de sesión exitoso, devuelve un token
+        "401":
+          description: Credenciales incorrectas
+  /users:
+    get:
+      summary: Listar usuarios con paginación y filtrado
+      tags:
+        - Users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: Número de página
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Cantidad de usuarios por página
+          schema:
+            type: integer
+        - name: role
+          in: query
+          description: Filtrar por rol
+          schema:
+            type: string
+        - name: firstName
+          in: query
+          description: Filtrar por nombre
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Lista de usuarios obtenida correctamente
+        "401":
+          description: No autorizado
+    post:
+      summary: Crear un nuevo usuario
+      tags:
+        - Users
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+      responses:
+        "201":
+          description: Usuario creado correctamente
+        "400":
+          description: Error en la solicitud
+  /users/{id}:
+    get:
+      summary: Obtener un usuario por ID
+      tags:
+        - Users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Datos del usuario obtenidos correctamente
+        "404":
+          description: Usuario no encontrado
+    put:
+      summary: Actualizar un usuario por ID
+      tags:
+        - Users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+      responses:
+        "200":
+          description: Usuario actualizado correctamente
+        "400":
+          description: Error en la solicitud
+        "404":
+          description: Usuario no encontrado
+    delete:
+      summary: Eliminar un usuario por ID
+      tags:
+        - Users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Usuario eliminado correctamente
+        "404":
+          description: Usuario no encontrado
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

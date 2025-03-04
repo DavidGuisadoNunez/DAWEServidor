@@ -7,11 +7,11 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node index.js", 
-    "dev": "npx nodemon index.js", 
+    "start": "node index.js",
+    "dev": "npx nodemon index.js",
     "lint": "npx eslint . --ext .js",
     "lint:fix": "npx eslint . --ext .js --fix",
-    "test": "jest --coverage", 
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "format": "prettier --write .",
     "docker:up": "docker-compose up -d",

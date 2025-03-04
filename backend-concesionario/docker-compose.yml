@@ -1,6 +1,31 @@
 version: "3.8"
 
 services:
+
+  sonar:
+    image: sonarqube:community
+    container_name: sonarqube
+    depends_on:
+      - postgres
+    ports:
+      - "9000:9000"
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://postgres:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    networks:
+      - guisauto_network
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+      POSTGRES_DB: sonar
+    networks:
+      - guisauto_network
+
   mongo:
     image: mongo:6
     container_name: mongo_db
@@ -12,6 +37,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: davguisadonunez
     volumes:
       - mongo_data:/data/db
+    networks:
+      - guisauto_network
 
   backend:
     build: .
@@ -22,9 +49,11 @@ services:
     depends_on:
       - mongo
       - mailhog
+    networks:
+      - guisauto_network
     environment:
       NODE_ENV: production
-      MONGO_URI: mongodb://davguisadonunez:davguisadonunez@concesionariodb.ux7pn.mongodb.net/?retryWrites=true&w=majority&appName=concesionarioDB
+      MONGO_URI: "mongodb+srv://davguisadonunez:davguisadonunez@concesionariodb.ux7pn.mongodb.net/?retryWrites=true&w=majority"
       MAIL_HOST: mailhog
       MAIL_PORT: 1025
       MAIL_FROM: "no-reply@guisauto.com"
@@ -37,6 +66,12 @@ services:
     ports:
       - "1025:1025" # Puerto SMTP
       - "8025:8025" # Interfaz web
+    networks:
+      - guisauto_network
 
 volumes:
   mongo_data:
+
+networks:
+  guisauto_network:
+    driver: bridge

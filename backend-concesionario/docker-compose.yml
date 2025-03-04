@@ -21,10 +21,22 @@ services:
       - "5000:5000"
     depends_on:
       - mongo
+      - mailhog
     environment:
       NODE_ENV: production
-      MONGO_URI: mongodb+srv://davguisadonunez:davguisadonunez@concesionariodb.ux7pn.mongodb.net/?retryWrites=true&w=majority&appName=concesionarioDB
+      MONGO_URI: mongodb://davguisadonunez:davguisadonunez@concesionariodb.ux7pn.mongodb.net/?retryWrites=true&w=majority&appName=concesionarioDB
+      MAIL_HOST: mailhog
+      MAIL_PORT: 1025
+      MAIL_FROM: "no-reply@guisauto.com"
     command: ["npm", "run", "start"]
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    restart: always
+    ports:
+      - "1025:1025" # Puerto SMTP
+      - "8025:8025" # Interfaz web
 
 volumes:
   mongo_data:

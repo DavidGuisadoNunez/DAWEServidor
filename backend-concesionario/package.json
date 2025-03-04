@@ -7,10 +7,16 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "npx nodemon index.js",
+    "start": "node index.js", 
+    "dev": "npx nodemon index.js", 
     "lint": "npx eslint . --ext .js",
-    "lint:fix": "npx eslint . --ext .js --fix"
+    "lint:fix": "npx eslint . --ext .js --fix",
+    "test": "jest --coverage", 
+    "test:watch": "jest --watch",
+    "format": "prettier --write .",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker logs -f backend_api"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +33,7 @@
     "mongoose": "^8.12.0",
     "morgan": "^1.10.0",
     "neostandard": "^0.12.1",
+    "nodemailer": "^6.10.0",
     "nodemon": "^3.1.9",
     "supertest": "^7.0.0",
     "swagger-jsdoc": "^6.2.8",

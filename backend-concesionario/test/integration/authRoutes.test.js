@@ -3,21 +3,18 @@ import express from 'express';
 import authRoutes from '../../src/routes/authRoutes.js';
 import * as authController from '../../src/controllers/authController.js';
 import * as authService from '../../src/services/authService.js';
+import { describe, beforeEach, it, expect, jest } from '@jest/globals';
 
-// Aplicación de Express para pruebas
+jest.doMock('../../src/services/authService.js');
+jest.doMmock('../../src/middlewares/authMiddleware.js', () => ({
+  authMiddleware: jest.fn((req, res, next) => next()),
+  adminMiddleware: jest.fn((req, res, next) => next()),
+}));
+
+// Configuración de la app de pruebas
 const app = express();
 app.use(express.json());
 app.use('/api/auth', authRoutes);
-
-jest.mock('../../src/controllers/authController.js');
-jest.mock('../../src/services/authService.js');
-
-beforeAll(() => {
-  jest.mock('../../src/middlewares/authMiddleware.js', () => ({
-    authMiddleware: jest.fn((req, res, next) => next()),
-    adminMiddleware: jest.fn((req, res, next) => next()),
-  }));
-});
 
 describe('Auth Routes', () => {
   beforeEach(() => {
@@ -32,6 +29,7 @@ describe('Auth Routes', () => {
 
       const response = await request(app)
         .post('/api/auth/register')
+        .set('Authorization', 'Bearer mockAdminToken') // 🔹 Se agrega token de admin
         .send({
           firstName: 'John',
           lastName: 'Doe',
@@ -57,10 +55,12 @@ describe('Auth Routes', () => {
         });
       });
 
-      const response = await request(app).post('/api/auth/login').send({
-        email: 'john@example.com',
-        password: 'securepassword',
-      });
+      const response = await request(app)
+        .post('/api/auth/login')
+        .send({
+          email: 'john@example.com',
+          password: 'securepassword',
+        });
 
       expect(response.status).toBe(200);
       expect(response.body.success).toBe(true);
@@ -75,9 +75,11 @@ describe('Auth Routes', () => {
         accessToken: 'newAccessToken',
       });
 
-      const response = await request(app).post('/api/auth/refresh-token').send({
-        refreshToken: 'validRefreshToken',
-      });
+      const response = await request(app)
+        .post('/api/auth/refresh-token')
+        .send({
+          refreshToken: 'validRefreshToken',
+        });
 
       expect(response.status).toBe(200);
       expect(response.body.success).toBe(true);
@@ -87,9 +89,11 @@ describe('Auth Routes', () => {
     it('debe devolver un error si el refresh token es inválido', async () => {
       authService.refreshAccessToken.mockRejectedValue(new Error('Refresh token inválido'));
 
-      const response = await request(app).post('/api/auth/refresh-token').send({
-        refreshToken: 'invalidToken',
-      });
+      const response = await request(app)
+        .post('/api/auth/refresh-token')
+        .send({
+          refreshToken: 'invalidToken',
+        });
 
       expect(response.status).toBe(403);
       expect(response.body.success).toBe(false);

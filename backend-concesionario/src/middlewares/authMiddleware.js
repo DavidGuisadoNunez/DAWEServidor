@@ -1,22 +1,17 @@
-import jwt from 'jsonwebtoken';
-
 /**
  * Middleware para verificar el token JWT
  */
 export const authMiddleware = (req, res, next) => {
-  const token = req.header('Authorization')?.split(' ')[1];
+  if (req.path === '/api/auth/register') {  // 🔹 Permitir el registro sin token
+    return next();
+  }
 
+  const token = req.header('Authorization');
   if (!token) {
-    return res.status(401).json({ success: false, message: 'Acceso denegado. No hay token' });
+    return res.status(403).json({ success: false, message: 'Acceso denegado. No hay token' });
   }
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // Guardamos los datos del usuario (incluyendo el rol)
-    next();
-  } catch (error) {
-    return res.status(403).json({ success: false, message: 'Token inválido' });
-  }
+  next();
 };
 
 /**

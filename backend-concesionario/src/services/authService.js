@@ -5,38 +5,28 @@ import jwt from 'jsonwebtoken';
 /**
  * Registrar un nuevo usuario
  */
-export const registerUser = async (userData, requesterRole = 'user') => {
-  const { firstName, lastName, email, password, role } = userData;
-
+export const registerUser = async ({ firstName, lastName, email, password, role }) => {
+  // Verificar si el usuario ya existe
   const existingUser = await User.findOne({ email });
   if (existingUser) {
-    throw new Error('El email ya está registrado');
+    throw new Error('❌ El usuario ya está registrado');
   }
 
   // Hashear la contraseña
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  // Si quien crea el usuario es un admin, puede asignar el rol. Si no, se pone "user".
-  const assignedRole = requesterRole === 'admin' && role ? role : 'user';
-
+  // Si el role no se envía, se asigna 'user' por defecto
   const newUser = new User({
     firstName,
     lastName,
     email,
     password: hashedPassword,
-    role: assignedRole,
+    role: role || 'user' // Aquí nos aseguramos de que respete 'admin' si se envía
   });
 
+  // Guardar el usuario en la base de datos
   await newUser.save();
-
-  // Generar un token JWT
-  const token = jwt.sign(
-    { userId: newUser._id, role: newUser.role },
-    process.env.JWT_SECRET,
-    { expiresIn: '1h' }
-  );
-
-  return { user: newUser, token };
+  return newUser;
 };
 
 /**

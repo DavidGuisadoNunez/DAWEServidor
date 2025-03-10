@@ -2,6 +2,12 @@ import * as userService from '../services/userService.js';
 import User from '../models/User.js';
 
 /**
+ * Eliminar un usuario
+ */
+import mongoose from 'mongoose';
+import ApiError from '../utils/errorHandler.js';
+
+/**
  * Crear un nuevo usuario
  */
 export const createUser = async (req, res) => {
@@ -78,17 +84,25 @@ export const updateUser = async (req, res) => {
   }
 };
 
-/**
- * Eliminar un usuario
- */
 export const deleteUser = async (req, res, next) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
-    if (!user) {
-      return res.status(404).json({ success: false, message: 'Usuario no encontrado' });
+    const { id } = req.params;
+
+    // 🚨 Validación: Asegurar que el ID tiene formato correcto
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return next(new ApiError(400, 'Formato de ID inválido'));
     }
-    res.status(200).json({ success: true, message: 'Usuario eliminado' });
+
+    // Buscar usuario en la base de datos
+    const user = await User.findByIdAndDelete(id);
+
+    if (!user) {
+      return next(new ApiError(404, 'Usuario no encontrado'));
+    }
+
+    res.status(200).json({ success: true, message: 'Usuario eliminado correctamente' });
   } catch (error) {
-    next(error);
+    console.error('Error en deleteUser:', error);
+    next(new ApiError(500, 'Error interno del servidor al eliminar usuario'));
   }
 };

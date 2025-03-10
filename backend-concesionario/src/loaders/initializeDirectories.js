@@ -1,18 +1,14 @@
 import fs from 'fs';
 
-const directories = [
-  'logs',
-  'uploads',
-  'temp',
-];
+const directories = []; // Si es intencionalmente vacío, se podría eliminar directamente.
 
-export const initializeDirectories = (dirs = directories) => {
-  if (!dirs.length) {
-    console.warn('⚠️ No hay directorios para inicializar.');
+export const initializeDirectories = () => {
+  if (directories.length === 0) {
+    console.warn('⚠️ No directories to initialize.');
     return;
   }
 
-  dirs.forEach(dir => {
+  directories.forEach(dir => {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
       console.log(`📁 Directorio creado: ${dir}`);

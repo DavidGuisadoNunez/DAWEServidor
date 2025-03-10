@@ -2,5 +2,5 @@ projectKey=guisauto
 serverUrl=http://localhost:9000
 serverVersion=25.2.0.102705
 dashboardUrl=http://localhost:9000/dashboard?id=guisauto
-ceTaskId=b4bdad8f-a61b-40de-9f89-1d00cbe37f6e
-ceTaskUrl=http://localhost:9000/api/ce/task?id=b4bdad8f-a61b-40de-9f89-1d00cbe37f6e
+ceTaskId=06bbabbb-5a28-4233-a826-21ead77b01be
+ceTaskUrl=http://localhost:9000/api/ce/task?id=06bbabbb-5a28-4233-a826-21ead77b01be
